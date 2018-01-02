@@ -1,0 +1,39 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset ="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title> Upload Image </title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/formStyles.css' %}">
+
+
+    <link rel="icon" href="{% static 'img/favicon.ico' %}">
+
+  </head>
+
+  <body>
+
+    <form method="post" enctype="multipart/form-data">
+      <div class="form" style="margin-top: 100px;">
+        {% csrf_token %}
+        <input type="file" name="myfile">
+        <button type="submit">Upload</button>
+
+        {% if uploaded_file_url %}
+          <!--<p>File uploaded at: <a href="{{ uploaded_file_url }}">{{ uploaded_file_url }}</a></p>-->
+          <p> Image has been successfully uploaded </P>
+        {% endif %}
+
+        <br>
+        <br>
+        <a type="button" class="profile-btn btn btn-success" href="{% url 'newUser' %}">Return back to your Profile</a>
+      </div>
+    </form>
+
+  </body>
+</html>

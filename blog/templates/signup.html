@@ -1,0 +1,33 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset ="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title> Sign Up </title>
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/formStyles.css' %}">
+
+
+    <link rel="icon" href="{% static 'img/favicon.ico' %}">
+
+  </head>
+
+  <body>
+    <div class="login-page">
+      <div class="form">
+        <h2>Sign up</h2>
+        <form class="login-form" method="post">
+          {% csrf_token %}
+          {{ form.as_p }}
+
+          <button type="submit">Sign up</button>
+          <p class="message">Already registered? <a href="{% url 'login' %}">Login</a></p>
+        </form>
+      </div>
+    </div>
+
+
+
+  </body>
+</html>

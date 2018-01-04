@@ -1,0 +1,100 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>﻿
+    <meta charset ="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title> PhotoLand: Example </title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+
+    <link rel="icon" href="{% static 'img/favicon.ico' %}">
+
+  </head>
+
+  <body>
+    <!--START OF NAVIGATION BAR -->
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+      <a class="navbar-brand" href="{% url 'discover' %}">PhotoLand</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="{% url 'discover' %}">Discover <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'newUser' %}">My Profile</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="dropdown01" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Upgrade
+            </a>
+            <div class="dropdown-menu" aria-labelledby="dropdown01">
+              <a class="dropdown-item" href="#">+50 GB Storage - 8€/month</a>
+              <a class="dropdown-item" href="#">+150 GB Storage - 16€/month</a>
+              <a class="dropdown-item" href="#">+500 GB Storage - 24€/month</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Unlimited Storage - 40€/month</a>
+            </div>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <!--
+          <input class="form-control mr-sm-2" type="text" placeholder="Username" aria-label="Username">
+          <input class="form-control mr-sm-2" type="text" placeholder="Password" aria-label="Password">
+        -->
+          <div class="btn-toolbar">
+            <a class="signup-button btn btn-outline-danger my-2 my-sm-0" href="{% url 'index' %}" type="button">Logout</a>
+          </div>
+        </form>
+      </div>
+    </nav>
+<!-- END OF NAVBAR -->
+
+  {% block content %}
+  {% endblock %}
+
+
+    <!-- BEGINNING OF FOOTER -->
+    <footer class="container-fluid text-center">
+      <div class="row">
+        <div class="col-sm-4">
+          <h3>Contact Us</h3>
+
+          <h6>Tel: +31650855588</h6>
+          <h6>info@photoland.com</h6>
+        </div>
+        <div class="col-sm-4">
+          <h3>Follow us:</h3>
+          <a href="#" class="fa fa-facebook"></a>
+          <a href="#" class="fa fa-twitter"></a>
+          <a href="#" class="fa fa-google-plus"></a>
+          <a href="#" class="fa fa-linkedin"></a>
+          <a href="#" class="fa fa-youtube"></a>
+        </div>
+        <div class="col-sm-4" style="margin: auto">
+            <h1> PhotoLand </h1>
+        </div>
+      </div>
+    </footer>
+    <!-- END OF FOOTER-->
+
+
+    <!--
+    Like button click
+    CART section on navbar which increaases as cart button is clicked.
+  -->
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
+
+  </body>
+</html>

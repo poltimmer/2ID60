@@ -1,8 +1,9 @@
 {% load staticfiles %}
 <!DOCTYPE html>
 <html lang="en">
-  <head>﻿
-    <meta charset ="UTF-8">
+
+<head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <title> PhotoLand: Example </title>
@@ -13,82 +14,80 @@
 
     <link rel="icon" href="{% static 'img/favicon.ico' %}">
 
-  </head>
+</head>
 
-  <body>
+<body>
     <!--START OF NAVIGATION BAR -->
     <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-      <a class="navbar-brand" href="{% url 'discover' %}">PhotoLand</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <a class="navbar-brand" href="{% url 'discover' %}">PhotoLand</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-        <ul class="navbar-nav mr-auto">
-          <li id="discover" class="nav-item">
-            <a class="nav-link" href="{% url 'discover' %}">Discover</a>
-          </li>
-          <li id="myprofile" class="nav-item">
-            <a class="nav-link" href="{% url 'newUser' %}">My Profile</a>
-          </li>
-<<<<<<< HEAD
-           <li class="nav-item">
-            <a class="nav-link" href="{% url 'photogallery' %}">Browse Photo Gallery</a>
-          </li>
-          <li class="nav-item dropdown">
-=======
-          <li id="upgrade" class="nav-item dropdown">
->>>>>>> 55e92766acd99ce87030ddb797aa82f2253b4221
-            <a class="nav-link dropdown-toggle" href="#" id="dropdown01" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav mr-auto">
+                <li id="discover" class="nav-item">
+                    <a class="nav-link" href="{% url 'discover' %}">Discover</a>
+                </li>
+                <li id="myprofile" class="nav-item">
+                    <a class="nav-link" href="{% url 'newUser' %}">My Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'photogallery' %}">Browse Photo Gallery</a>
+                </li>
+                <li class="nav-item dropdown">
+
+                    <li id="upgrade" class="nav-item dropdown">
+
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdown01" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Upgrade
             </a>
-            <div class="dropdown-menu" aria-labelledby="dropdown01">
-              <a class="dropdown-item" href="#">+50 GB Storage - 8€/month</a>
-              <a class="dropdown-item" href="#">+150 GB Storage - 16€/month</a>
-              <a class="dropdown-item" href="#">+500 GB Storage - 24€/month</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Unlimited Storage - 40€/month</a>
-            </div>
-          </li>
-        </ul>
-        <form class="form-inline my-2 my-lg-0">
-          <!--
+                        <div class="dropdown-menu" aria-labelledby="dropdown01">
+                            <a class="dropdown-item" href="#">+50 GB Storage - 8€/month</a>
+                            <a class="dropdown-item" href="#">+150 GB Storage - 16€/month</a>
+                            <a class="dropdown-item" href="#">+500 GB Storage - 24€/month</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Unlimited Storage - 40€/month</a>
+                        </div>
+                    </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <!--
           <input class="form-control mr-sm-2" type="text" placeholder="Username" aria-label="Username">
           <input class="form-control mr-sm-2" type="text" placeholder="Password" aria-label="Password">
         -->
-          <div class="btn-toolbar">
-            <a class="signup-button btn btn-outline-danger my-2 my-sm-0" href="{% url 'index' %}" type="button">Logout</a>
-          </div>
-        </form>
-      </div>
+                <div class="btn-toolbar">
+                    <a class="signup-button btn btn-outline-danger my-2 my-sm-0" href="{% url 'index' %}" type="button">Logout</a>
+                </div>
+            </form>
+        </div>
     </nav>
-<!-- END OF NAVBAR -->
+    <!-- END OF NAVBAR -->
 
-  {% block content %}
-  {% endblock %}
+    {% block content %} {% endblock %}
 
 
     <!-- BEGINNING OF FOOTER -->
     <footer class="container-fluid text-center">
-      <div class="row">
-        <div class="col-sm-4">
-          <h3>Contact Us</h3>
+        <div class="row">
+            <div class="col-sm-4">
+                <h3>Contact Us</h3>
 
-          <h6>Tel: +31650855588</h6>
-          <h6>info@photoland.com</h6>
+                <h6>Tel: +31650855588</h6>
+                <h6>info@photoland.com</h6>
+            </div>
+            <div class="col-sm-4">
+                <h3>Follow us:</h3>
+                <a href="#" class="fa fa-facebook"></a>
+                <a href="#" class="fa fa-twitter"></a>
+                <a href="#" class="fa fa-google-plus"></a>
+                <a href="#" class="fa fa-linkedin"></a>
+                <a href="#" class="fa fa-youtube"></a>
+            </div>
+            <div class="col-sm-4" style="margin: auto">
+                <h1> PhotoLand </h1>
+            </div>
         </div>
-        <div class="col-sm-4">
-          <h3>Follow us:</h3>
-          <a href="#" class="fa fa-facebook"></a>
-          <a href="#" class="fa fa-twitter"></a>
-          <a href="#" class="fa fa-google-plus"></a>
-          <a href="#" class="fa fa-linkedin"></a>
-          <a href="#" class="fa fa-youtube"></a>
-        </div>
-        <div class="col-sm-4" style="margin: auto">
-            <h1> PhotoLand </h1>
-        </div>
-      </div>
     </footer>
     <!-- END OF FOOTER-->
 
@@ -103,5 +102,6 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
     <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
 
-  </body>
+</body>
+
 </html>

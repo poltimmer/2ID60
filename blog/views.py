@@ -25,6 +25,9 @@ def newUser(request):
 def discover(request):
     return render(request, 'blog/discover.html', {})
 
+def photogallery(request):
+    return render(request, 'blog/photogallery.html', {})
+
 
 
 def signup(request):

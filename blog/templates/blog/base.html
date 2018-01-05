@@ -25,16 +25,20 @@
 
       <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="{% url 'discover' %}">Discover <span class="sr-only">(current)</span></a>
+          <li id="discover" class="nav-item">
+            <a class="nav-link" href="{% url 'discover' %}">Discover</a>
           </li>
-          <li class="nav-item">
+          <li id="myprofile" class="nav-item">
             <a class="nav-link" href="{% url 'newUser' %}">My Profile</a>
           </li>
+<<<<<<< HEAD
            <li class="nav-item">
             <a class="nav-link" href="{% url 'photogallery' %}">Browse Photo Gallery</a>
           </li>
           <li class="nav-item dropdown">
+=======
+          <li id="upgrade" class="nav-item dropdown">
+>>>>>>> 55e92766acd99ce87030ddb797aa82f2253b4221
             <a class="nav-link dropdown-toggle" href="#" id="dropdown01" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Upgrade
             </a>

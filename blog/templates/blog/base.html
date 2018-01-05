@@ -25,13 +25,13 @@
 
       <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="{% url 'discover' %}">Discover <span class="sr-only">(current)</span></a>
+          <li id="discover" class="nav-item">
+            <a class="nav-link" href="{% url 'discover' %}">Discover</a>
           </li>
-          <li class="nav-item">
+          <li id="myprofile" class="nav-item">
             <a class="nav-link" href="{% url 'newUser' %}">My Profile</a>
           </li>
-          <li class="nav-item dropdown">
+          <li id="upgrade" class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="dropdown01" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Upgrade
             </a>

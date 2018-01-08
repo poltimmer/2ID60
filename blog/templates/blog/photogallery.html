@@ -1,12 +1,8 @@
+{% extends 'blog/base.html' %}
 
 {% load staticfiles %}
 
-
-<html class="no-js">
-	<head>
-
-
-	
+	{% block head %}
 	<!-- Animate.css -->
 	<link rel="stylesheet" href="{% static 'css/animate.css' %}">
 	<!-- Icomoon Icon Fonts-->
@@ -20,14 +16,11 @@
 	<!-- Modernizr JS -->
 	<script src="{% static 'js/modernizr-2.6.2.min.js' %}"></script>
 
+	<title>PhotoLand: Explore Gallery</title>
 
-	</head>
-	<body>
-		
-	
-	
-	
-	
+	{% endblock %}
+
+	{% block content %}
 	<div id="fh5co-main">
 		<div class="container">
 
@@ -161,7 +154,7 @@
 	        		<div class="fh5co-desc">Harum repellat labore est cum ipsa, nesciunt neque mollitia adipisci?</div>
         		</div>
         	</div>
-        	
+
         	<div class="item">
         		<div class="animate-box">
 	        		<a href="images/img_22.jpg" class="image-popup fh5co-board-img"><img src="{% static 'img/Photos/img_22.jpg' %}" alt="Free HTML5 Bootstrap template"></a>
@@ -220,10 +213,10 @@
         </div>
        </div>
 	</div>
+{% endblock %}
 
-	
 
-
+{% block script %}
 	<!-- jQuery -->
 	<script src="{% static 'js/jquery.min.js' %}"></script>
 	<!-- jQuery Easing -->
@@ -238,9 +231,5 @@
 	<script src="{% static 'js/salvattore.min.js' %}"></script>
 	<!-- Main JS -->
 	<script src="{% static 'js/mainphoto.js' %}"></script>
-	
-	
 
-	
-	</body>
-</html>
+{% endblock %}

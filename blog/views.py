@@ -6,6 +6,7 @@ from django.conf import settings
 from django.core.files.storage import FileSystemStorage
 from blog.forms import SignUpForm, ImageUploadForm
 from django.http.response import HttpResponseForbidden, HttpResponse
+from django.contrib.auth.models import User
 
 
 

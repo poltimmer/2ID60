@@ -1,11 +1,11 @@
 from django.shortcuts import render, redirect
 from django.utils import timezone
-from .models import Post
+from .models import Post, Profile
 from django.contrib.auth import login, authenticate
 from django.conf import settings
 from django.core.files.storage import FileSystemStorage
-from blog.forms import SignUpForm
-
+from blog.forms import SignUpForm, ImageUploadForm
+from django.http.response import HttpResponseForbidden, HttpResponse
 
 
 
@@ -57,3 +57,13 @@ def simple_upload(request):
             'uploaded_file_url': uploaded_file_url
         })
     return render(request, 'blog/simple_upload.html')
+
+def upload2(request):
+    if request.method == 'POST':
+        form = ImageUploadForm(request.POST, request.FILES)
+        if form.is_valid():
+            m = Profile.objects.get(pk=user.username)
+            m.profilepicture = form.cleaned_data['image']
+            m.save()
+            return HttpResponse('image upload success')
+    return HttpResponseForbidden('allowed only via POST')

@@ -15,7 +15,8 @@ urlpatterns = [
     url(r'^logout/$', auth_views.logout, name='logout'),
     url(r'^signup/$', views.signup, name='signup'),
     url(r'^simple_upload/$', views.simple_upload, name='simple_upload'),
-    
+    url(r'^upload2/$', views.upload2, name='upload2'),
+
 ]
 
 if settings.DEBUG:

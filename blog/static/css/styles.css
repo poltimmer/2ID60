@@ -1,7 +1,12 @@
 ﻿body {
-  background-color:   lightblue;
+  background-color: lightblue;
   padding: 0 0 0 0;
 }
+
+.contentbox {
+    display: block;
+}
+
 .btn-toolbar .btn{
     margin-right: 5px;
 }
@@ -299,3 +304,28 @@ footer {
 
 }
 */
+
+.wrapper {
+    display: flex;
+    align-items: stretch;
+}
+
+#sidebar {
+    padding-top: 66px;
+    width: 250px;
+    background-color: royalblue;
+    color: white;
+    position: static;
+    padding: 10px;
+    display: flex;
+    align-content: flex-start;
+    box-shadow:3px 3px black;
+}
+
+#sidebar .avatar {
+    height: 100px;
+    width: 100px;
+    margin: auto;
+    background: red;
+    position: relative;
+}

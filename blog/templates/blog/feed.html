@@ -1,0 +1,152 @@
+{% extends 'blog/base.html' %}
+
+{% load staticfiles %}
+
+{% block head %}
+<title>PhotoLand: Discover</title>
+{% endblock %}
+
+{% block content %}
+<br>
+<!-- Single SLIDE -->
+<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active" style="height: 500px">
+      <img class="example-pic w-100" src="{% static 'img/discover.jpg' %}" alt="First slide">
+      <div  class="carousel-caption">
+        <div id="slide-caption" class="carousel-caption-text">
+          <h1>Discover Other Photographers</h1>
+          <h5>Widen your world</h5>
+        </div>
+        <br>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- END OF Single SLIDE -->
+<!-- START OF PROFILE PICTURE -->
+<div class="Profile-info container">
+  <div class="row">
+    <div class="pp col-md-6">
+      <img class="profile-pic" src="{% static 'img/paul.jpg' %}" alt="Profile Picture">
+    </div>
+    <div class="artist-info col-md-6">
+      <h2> Paul_24 </h2>
+      <h5 style="color: #737373"> Paul Hoffman </h5>
+      <br>
+      <div style="padding-bottom: 150px;">
+        <button type="button" class="follow-btn profile-btn btn btn-primary">Follow</button>
+        <!--<button type="button" class="btn btn-danger">Like</button>-->
+        <button type="button" class="profile-btn btn btn-success">Share</button>
+        <button type="button" class="profile-btn btn btn-dark" data-toggle="modal" data-target="#myModalPaul">Contact</button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="myModalPaul" role="dialog">
+          <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">E-mail</h4>
+              </div>
+              <div class="modal-body">
+                <p>paulhoffman@gamil.com</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- START OF PROFILE PICTURE -->
+  <div class="Profile-info container">
+    <div class="row">
+      <div class="pp col-md-6">
+        <img class="profile-pic" src="{% static 'img/volky.jpeg' %}" alt="Profile Picture">
+      </div>
+      <div class="artist-info col-md-6">
+        <h2> Volkyc </h2>
+        <h5 style="color: #737373"> Volkan Cinar </h5>
+        <br>
+        <div style="padding-bottom: 150px;">
+          <button type="button" class="follow-btn profile-btn btn btn-primary">Follow</button>
+          <!--<button type="button" class="btn btn-danger">Like</button>-->
+          <button type="button" class="profile-btn btn btn-success">Share</button>
+          <button type="button" class="profile-btn btn btn-dark" data-toggle="modal" data-target="#myModalVolky">Contact</button>
+
+          <!-- Modal -->
+          <div class="modal fade" id="myModalVolky" role="dialog">
+            <div class="modal-dialog">
+              <!-- Modal content-->
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <h4 class="modal-title">E-mail</h4>
+                </div>
+                <div class="modal-body">
+                  <p>vcinar@ttnet.com</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- START OF PROFILE PICTURE -->
+    <div class="Profile-info container">
+      <div class="row">
+        <div class="container pp col-md-6">
+          <img class="profile-pic" src="{% static 'img/kenzy.jpeg' %}" alt="Profile Picture">
+        </div>
+        <div class="artist-info col-md-6">
+          <h2> kenzy </h2>
+          <h5 style="color: #737373"> Kenzy Tailor </h5>
+          <br>
+          <div>
+            <button type="button" class="follow-btn profile-btn btn btn-primary">Follow</button>
+            <!--<button type="button" class="btn btn-danger">Like</button>-->
+            <button type="button" class="profile-btn btn btn-success">Share</button>
+            <button type="button" class="profile-btn btn btn-dark" data-toggle="modal" data-target="#myModalKenzy">Contact</button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="myModalKenzy" role="dialog">
+              <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">E-mail</h4>
+                  </div>
+                  <div class="modal-body">
+                    <p>kenzytailor@hotmail.com</p>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+<br>
+<br>
+<br>
+
+
+{% endblock %}

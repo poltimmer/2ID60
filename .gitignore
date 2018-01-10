@@ -10,3 +10,4 @@ open.bat
 start.bat
 runserver.bat
 /blog/templates/blog/loggedin
+/blog/migrations

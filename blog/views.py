@@ -29,6 +29,10 @@ def discover(request):
 def photogallery(request):
     return render(request, 'blog/photogallery.html', {})
 
+def jobgallery(request):
+    return render(request, 'blog/jobgallery.html', {})
+
+
 
 
 def signup(request):

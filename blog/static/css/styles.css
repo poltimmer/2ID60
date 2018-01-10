@@ -323,7 +323,7 @@ footer {
 #sidebar {
     padding-top: 76px !important;
     width: 120px;
-    background-color: royalblue;
+    background-color: #343a40;
     color: white;
     position: fixed;
     right: 0;
@@ -336,7 +336,7 @@ footer {
 #sidebar .avatar {
     height: 100px;
     width: 100px;
-    margin: auto;
+    margin: 10px auto;
     background: red;
     position: relative;
     padding: 10px;

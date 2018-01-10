@@ -14,14 +14,15 @@
       <div class="Profile-info container">
         <div class="row">
           <div class="pp col-md-6">
-            {% if uploaded_file_url %}
-              <!--
+        <!--    {% if uploaded_file_url %}
+
               <img class="profile-pic" src="{% static 'img/emptyPP.png' %}" alt="Profile Picture">
             -->
-              <img class="profile-pic" src="{% static 'img/upload.png' %}" alt="Profile Picture">
-            {% else %}
+              <img class="profile-pic" src="{{ user.profile.profilepicture }}" alt="Profile Picture">
+          <!--  {% else %}
               <img class="profile-pic" src="{% static 'img/emptyPP.png' %}" alt="Profile Picture">
             {% endif %}
+           -->
           </div>
           <div class="artist-info col-md-6">
             <h2> {{ user.username }} </h2>
@@ -72,47 +73,43 @@
       <div class="card-deck cards-sm-6 cards-md-4 cards-lg-3">
         <div class="card text-white bg-dark mb-3">
           <img class="card-img-top" src="{% static 'img/upload.png' %}" alt="Upload your image here">
+          <div class="card-img-overlay">
+            <img class="card-img-top profile-pic" style="margin-left: 25%" src="{% static 'img/uploadSymbol.png' %}" alt="Upload">
+          </div>
           <div class="card-body">
             <div id="edit" contenteditable="true">
               <h4 class="card-title">Click here to add a Title</h4>
               <p class="card-text">and a description or price tag</p>
             </div>
             <!--<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>-->
-            <div class="card-btn text-center">
-              <br>
-              <br>
-              <a id="UploadImage" type="button" href="{% url 'simple_upload' %}" class="btn btn-primary">Upload</a>
-            </div>
           </div>
         </div>
         <div class="card text-white bg-dark mb-3">
           <img class="card-img-top" src="{% static 'img/upload.png' %}" alt="Card image cap">
+          <div class="card-img-overlay">
+            <img class="card-img-top profile-pic" style="margin-left: 25%" src="{% static 'img/uploadSymbol.png' %}" alt="Upload">
+          </div>
           <div class="card-body">
             <div id="edit" contenteditable="true">
               <h4 class="card-title">Click here to add a Title</h4>
               <p class="card-text">and a description or price tag</p>
             </div>
             <!--<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>-->
-            <div class="card-btn text-center">
-              <br>
-              <br>
-              <a id="UploadImage" type="button" href="{% url 'simple_upload' %}" class="btn btn-primary">Upload</a>
-            </div>
+
           </div>
         </div>
         <div class="card text-white bg-dark mb-3">
           <img class="card-img-top" src="{% static 'img/upload.png' %}" alt="Card image cap">
+          <div class="card-img-overlay">
+            <img class="card-img-top profile-pic" style="margin-left: 25%" src="{% static 'img/uploadSymbol.png' %}" alt="Upload">
+          </div>
           <div class="card-body">
             <div id="edit" contenteditable="true">
               <h4 class="card-title">Click here to add a Title</h4>
               <p class="card-text">and a description or price tag</p>
             </div>
             <!--<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>-->
-            <div class="card-btn text-center">
-              <br>
-              <br>
-              <a id="UploadImage" type="button" href="{% url 'simple_upload' %}" class="btn btn-primary">Upload</a>
-            </div>
+
           </div>
         </div>
       </div>

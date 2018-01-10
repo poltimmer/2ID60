@@ -20,6 +20,27 @@ body {
 
 .containerok {
   position: relative;
+<<<<<<< HEAD
   margin-top: 110px !important;
 
 }
+=======
+  margin-top: 110px!important;
+   
+}
+
+.pageblock {
+    background-color: #007bff!important;
+    color: white !important;
+}
+
+.jobtext {
+    position: relative!important;
+}
+.job {
+    position: relative;
+    align-content: center;
+    
+}
+    
+>>>>>>> e481dc66ede31a732679ecdaa3f6e89503e06e8c

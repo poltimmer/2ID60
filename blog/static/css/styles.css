@@ -127,9 +127,10 @@
   text-transform: uppercase;
 }
 .btn {
-  font-size: 18px:
+  font-size: 18px;
   color: #ffffff;
   padding: 12px 22px;
+  -webkit-appearance: none !important;
 }
 .container {
   margin: 4% auto;
@@ -331,6 +332,7 @@ footer {
     background: red;
     position: relative;
     padding: 10px;
+    border-radius: 100%;
 }
 
 footer {

@@ -28,7 +28,7 @@
 
         <div class="collapse navbar-collapse" id="navbarsExampleDefault">
             <ul class="navbar-nav mr-auto">
-              {% if user.is_authenticated %}
+                {% if user.is_authenticated %}
                 <li id="discover" class="nav-item">
                     <a class="nav-link" href="{% url 'discover' %}">Home</a>
                 </li>
@@ -42,7 +42,7 @@
                     <a class="nav-link" href="{% url 'jobgallery' %}">Explore Job Offers</a>
                 </li>
                 {% else %}
-                <li class="nav-item active">
+                <li class="nav-item">
                   <a class="nav-link" href="{% url 'index' %}">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">

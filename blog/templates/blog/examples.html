@@ -1,86 +1,8 @@
+{% extends 'blog/base.html' %}
+
 {% load staticfiles %}
-<!DOCTYPE html>
-<html lang="en">
-  <head>﻿
-    <meta charset ="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title> PhotoLand: Example </title>
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
-
-    <link rel="icon" href="{% static 'img/favicon.ico' %}">
-
-  </head>
-
-  <body>
-    <!--START OF NAVIGATION BAR -->
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-      <a class="navbar-brand" href="{% url 'index' %}">PhotoLand</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'index' %}">Home</a>
-          </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="{% url 'examples' %}">Example <span class="sr-only">(current)</span></a>
-          </li>
-        </ul>
-        <form class="form-inline my-2 my-lg-0">
-          <!--
-          <input class="form-control mr-sm-2" type="text" placeholder="Username" aria-label="Username">
-          <input class="form-control mr-sm-2" type="text" placeholder="Password" aria-label="Password">
-        -->
-          <div class="btn-toolbar">
-            <a class="login-button btn btn-outline-success my-2 my-sm-0" href="{% url 'login' %}" type="button">Log in</a>
-            <a class="signup-button btn btn-outline-danger my-2 my-sm-0" href="{% url 'signup' %}" type="button">Sign up</a>
-          </div>
-        </form>
-      </div>
-    </nav>
-<!-- END OF NAVBAR -->
-    <br>
-<!--
-<!-- Login Form
-     <div class='login-form'>
-       <div class='container'>
-         <form>
-           <h2>Log in</h2>
-           <input class='e-mail' type="text" placeholder="E-mail" aria-label="E-mail" />
-           <!--<h4>Password</h4>
-           <input class='password' type="text" placeholder="Password" aria-label="Password" />
-           <input class='sign-in-button' type='submit' value='Sign In' />
-         </form>
-       </div>
-     </div>
-     <!-- END OF LOGIN FORM
-     <!-- SIGN UP FORM
-      <div class='signup-form'>
-        <div class='container'>
-          <h2>Begin your Journey</h2>
-          <div class="row">
-            <div class="col-md-6"> <!-- 2 Columns since 12/6 is 2
-              <input class='firstname' type="text" placeholder="First Name" aria-label="First Name" />
-              <input class='lastname' type="text" placeholder="Last Name" aria-label="Last Name" />
-              <input class='new-e-mail' type="text" placeholder="E-mail" aria-label="E-mail" />
-              <input class='birthdate' type="text" placeholder="Birthdate (dd.mm.yyyy)" aria-label="Birthdate (dd.mm.yyyy)" />
-            </div>
-            <div class="col-md-6">
-              <input class='new-password' type="text" placeholder="Password" aria-label="Password" />
-              <input class='new-re-password' type="text" placeholder="Re-type Password" aria-label="Re-type Password" />
-              <input class='sign-up-button' type='submit' value='Sign Up' />
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- END OF SIGNUP FORM
-      -->
+{% block content %}
       <!-- Single SLIDE -->
       <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
@@ -265,40 +187,4 @@
     <br>
     <br>
     <br>
-    <!-- BEGINNING OF FOOTER -->
-    <footer class="container-fluid text-center">
-      <div class="row">
-        <div class="col-sm-4">
-          <h3>Contact Us</h3>
-
-          <h6>Tel: +31650855588</h6>
-          <h6>info@photoland.com</h6>
-        </div>
-        <div class="col-sm-4">
-          <h3>Follow us:</h3>
-          <a href="#" class="fa fa-facebook"></a>
-          <a href="#" class="fa fa-twitter"></a>
-          <a href="#" class="fa fa-google-plus"></a>
-          <a href="#" class="fa fa-linkedin"></a>
-          <a href="#" class="fa fa-youtube"></a>
-        </div>
-        <div class="col-sm-4" style="margin: auto">
-            <h1> PhotoLand </h1>
-        </div>
-      </div>
-    </footer>
-    <!-- END OF FOOTER-->
-
-
-    <!--
-    Like button click
-    CART section on navbar which increaases as cart button is clicked.
-  -->
-
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
-
-  </body>
-</html>
+  {% endblock %}

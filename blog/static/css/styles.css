@@ -4,18 +4,25 @@
 }
 
 .contentbox {
-    display: block;
-    padding-right: 120px;
+  display: block;
+}
+
+.side-active {
+  margin-right: 120px;
+}
+
+footer.side-active {
+  padding-right: 120px !important;
 }
 
 .btn-toolbar .btn{
-    margin-right: 5px;
+  margin-right: 5px;
 }
 .hide {
   display: hide;
 }
 .active a{
-    color: lightblue !important;
+  color: lightblue !important;
 }
 
 .card-btn1:hover {
@@ -127,9 +134,10 @@
   text-transform: uppercase;
 }
 .btn {
-  font-size: 18px:
+  font-size: 18px;
   color: #ffffff;
   padding: 12px 22px;
+  -webkit-appearance: none !important;
 }
 .container {
   margin: 4% auto;
@@ -312,7 +320,7 @@ footer {
 }
 
 #sidebar {
-    padding-top: 66px !important;
+    padding-top: 76px !important;
     width: 120px;
     background-color: royalblue;
     color: white;
@@ -331,8 +339,5 @@ footer {
     background: red;
     position: relative;
     padding: 10px;
-}
-
-footer {
-  padding-right: 120px !important;
+    border-radius: 100%;
 }

@@ -28,6 +28,7 @@
 
         <div class="collapse navbar-collapse" id="navbarsExampleDefault">
             <ul class="navbar-nav mr-auto">
+              {% if user.is_authenticated %}
                 <li id="discover" class="nav-item">
                     <a class="nav-link" href="{% url 'discover' %}">Home</a>
                 </li>
@@ -37,9 +38,20 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'photogallery' %}">Explore Gallery</a>
                 </li>
+<<<<<<< HEAD
                  <li class="nav-item">
                     <a class="nav-link" href="{% url 'jobgallery' %}">Explore Job Offers</a>
                 </li>
+=======
+                {% else %}
+                <li class="nav-item active">
+                  <a class="nav-link" href="{% url 'index' %}">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'examples' %}">Example</a>
+                </li>
+                {% endif %}
+>>>>>>> c9383a5123229166c074354e24d4b94b5383b09f
             </ul>
             <form class="form-inline my-2 my-lg-0">
                 <!--
@@ -48,7 +60,7 @@
         -->
                 <div class="btn-toolbar">
                     {% if user.is_authenticated %}
-                    <a class="signup-button btn btn-outline-danger my-2 my-sm-0" href="{% url 'index' %}" type="button">Logout</a>
+                    <a class="signup-button btn btn-outline-danger my-2 my-sm-0" href="{% url 'logout' %}" type="button">Logout</a>
                     {% else %}
                     <a class="login-button btn btn-outline-success my-2 my-sm-0" href="{% url 'login' %}" type="button">Log in</a>
                     <a class="signup-button btn btn-outline-danger my-2 my-sm-0" href="{% url 'signup' %}" type="button">Sign up</a>
@@ -61,6 +73,7 @@
 
     <div class="wrapper">
         <div class="contentbox">{% block content %} {% endblock %}</div>
+        {% if user.is_authenticated %}
         <div id="sidebar">
             <div class="header">
                 <h3>Friends</h3>
@@ -69,6 +82,7 @@
             <div class="avatar"></div>
             <div class="avatar"></div>
         </div>
+        {% endif %}
     </div>
 
 
@@ -100,6 +114,14 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
     <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
+    {% if user.is_authenticated %}
+    <script>
+    $( document ).ready(function() {
+      $('.contentbox').addClass('side-active');
+      $('footer').addClass('side-active');
+    });
+    </script>
+    {% endif %}
 
     {% block script %}
     {% endblock %}

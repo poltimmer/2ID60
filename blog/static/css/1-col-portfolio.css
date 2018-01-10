@@ -23,3 +23,18 @@ body {
   margin-top: 110px!important;
    
 }
+
+.pageblock {
+    background-color: #007bff!important;
+    color: white !important;
+}
+
+.jobtext {
+    position: relative!important;
+}
+.job {
+    position: relative;
+    align-content: center;
+    
+}
+    

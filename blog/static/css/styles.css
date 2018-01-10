@@ -4,18 +4,25 @@
 }
 
 .contentbox {
-    display: block;
-    padding-right: 120px;
+  display: block;
+}
+
+.side-active {
+  margin-right: 120px;
+}
+
+footer.side-active {
+  padding-right: 120px !important;
 }
 
 .btn-toolbar .btn{
-    margin-right: 5px;
+  margin-right: 5px;
 }
 .hide {
   display: hide;
 }
 .active a{
-    color: lightblue !important;
+  color: lightblue !important;
 }
 
 .card-btn1:hover {
@@ -313,7 +320,7 @@ footer {
 }
 
 #sidebar {
-    padding-top: 66px !important;
+    padding-top: 76px !important;
     width: 120px;
     background-color: royalblue;
     color: white;
@@ -333,8 +340,4 @@ footer {
     position: relative;
     padding: 10px;
     border-radius: 100%;
-}
-
-footer {
-  padding-right: 120px !important;
 }

@@ -68,14 +68,17 @@ def upload2(request):
     if request.method == 'POST':
         form = ImageUploadForm(request.POST, request.FILES)
         if form.is_valid():
-            m = Profile.objects.get(pk=user.username)
+            m = Profile.objects.get(pk=request.user.id)
             m.profilepicture = form.cleaned_data['image']
             m.save()
             return HttpResponse('image upload success')
     return HttpResponseForbidden('allowed only via POST')
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 62bdd6da10e1f7880a4ef660c41b9275bf34d47d
 def post_new(request):
     form = PostForm()
     return render(request, 'blog/post_edit.html', {'form': form})

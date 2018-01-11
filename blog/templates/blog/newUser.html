@@ -14,15 +14,9 @@
       <div class="Profile-info container">
         <div class="row">
           <div class="pp col-md-6">
-        <!--    {% if uploaded_file_url %}
 
-              <img class="profile-pic" src="{% static 'img/emptyPP.png' %}" alt="Profile Picture">
-            -->
-              <img class="profile-pic" src="{{ user.profile.profilepicture }}" alt="Profile Picture">
-          <!--  {% else %}
-              <img class="profile-pic" src="{% static 'img/emptyPP.png' %}" alt="Profile Picture">
-            {% endif %}
-           -->
+              <img class="profile-pic" src="/static/media/{{ user.profile.profilepicture }}" alt="Profile Picture">
+
           </div>
           <div class="artist-info col-md-6">
             <h2> {{ user.username }} </h2>

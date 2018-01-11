@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 from django.db.models.signals import post_save
 from django.dispatch import receiver
 from django import forms
+
 class Post(models.Model):
     creator = models.ForeignKey('auth.User') #formerly 'author'
     title = models.CharField(max_length=200)

@@ -74,11 +74,6 @@ def upload2(request):
             return HttpResponse('image upload success')
     return HttpResponseForbidden('allowed only via POST')
 
-<<<<<<< HEAD
-
-
-=======
->>>>>>> 62bdd6da10e1f7880a4ef660c41b9275bf34d47d
 def post_new(request):
     form = PostForm()
     return render(request, 'blog/post_edit.html', {'form': form})

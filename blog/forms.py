@@ -20,12 +20,6 @@ class ImageUploadForm(forms.Form):
     """Image upload form."""
     image = forms.ImageField()
 
-<<<<<<< HEAD
-
-
-
-=======
->>>>>>> 62bdd6da10e1f7880a4ef660c41b9275bf34d47d
 class PostForm(forms.ModelForm):
 
     class Meta:

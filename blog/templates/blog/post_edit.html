@@ -1,13 +1,5 @@
 {% extends 'blog/base.html' %}
 
-<<<<<<< HEAD
-{% block content %}
-    <h1>New post</h1>
-    <form method="POST" class="post-form">{% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit" class="save btn btn-default">Save</button>
-    </form>
-=======
 {% load staticfiles %}
 
 {% block head %}
@@ -22,5 +14,4 @@
 {% endblock %}
 
 {% block script %}
->>>>>>> 62bdd6da10e1f7880a4ef660c41b9275bf34d47d
 {% endblock %}

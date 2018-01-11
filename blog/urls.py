@@ -1,4 +1,4 @@
-from django.conf.urls import url
+from django.conf.urls import url, include
 from django.conf import settings
 from django.conf.urls.static import static
 from . import views
@@ -17,7 +17,7 @@ urlpatterns = [
     url(r'^signup/$', views.signup, name='signup'),
     url(r'^simple_upload/$', views.simple_upload, name='simple_upload'),
     url(r'^upload2/$', views.upload2, name='upload2'),
-
+    url(r'^', include('api.urls')),
 ]
 
 if settings.DEBUG:

@@ -1,4 +1,5 @@
 from django import forms
+from .models import Post
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 
@@ -17,3 +18,12 @@ class SignUpForm(UserCreationForm):
 class ImageUploadForm(forms.Form):
     """Image upload form."""
     image = forms.ImageField()
+
+
+
+
+class PostForm(forms.ModelForm):
+
+    class Meta:
+        model = Post
+        fields = ('title', 'text',)

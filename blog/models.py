@@ -27,7 +27,7 @@ class Post(models.Model):
         return self.title
 
 class Profile(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key = True)
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
     profilepicture = models.ImageField(upload_to = 'img/', default = 'img/emptyPP.png')
 
 @receiver(post_save, sender=User)

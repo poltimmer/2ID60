@@ -18,7 +18,7 @@
 
               <img class="profile-pic" src="{% static 'img/emptyPP.png' %}" alt="Profile Picture">
             -->
-              <img class="profile-pic" src="{{ user.profile.profilepicture }}" alt="Profile Picture">
+              <img class="profile-pic" src="{{ MEDIA_URL }}{ user.profile.profilepicture }}" alt="Profile Picture">
           <!--  {% else %}
               <img class="profile-pic" src="{% static 'img/emptyPP.png' %}" alt="Profile Picture">
             {% endif %}

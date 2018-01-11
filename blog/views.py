@@ -74,7 +74,8 @@ def upload2(request):
             return HttpResponse('image upload success')
     return HttpResponseForbidden('allowed only via POST')
 
-def post_new(request):
+def post_new(request, pk):
+    post = get_object_or_404(Post, pk=pk)
     if request.method == "POST":
         form = PostForm(request.POST, instance=post)
         if form.is_valid():

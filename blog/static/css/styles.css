@@ -342,3 +342,24 @@ footer {
     padding: 10px;
     border-radius: 100%;
 }
+
+#smallAicon {
+    margin: 0px;
+    padding: 5px!important;
+    position: relative;
+    top: 6px;
+    
+}
+
+#smallAname {
+    color: whitesmoke !important;
+    position: relative!important;
+    top: 5px;
+    
+}
+
+#dropdown1 {
+    padding: 5px!important;
+    position: relative !important;
+    top 2px;    
+}

@@ -47,6 +47,13 @@
                 </li>
                 {% endif %}
             </ul>
+            
+            <div class="hide Adropdown">
+                <ul>
+                <li>werkt dit nu of niet</li>
+                </ul>
+            </div>
+            
             <form class="form-inline my-2 my-lg-0">
                 <!--
           <input class="form-control mr-sm-2" type="text" placeholder="Username" aria-label="Username">
@@ -54,13 +61,13 @@
         -->
                 <div class="btn-toolbar">
                     {% if user.is_authenticated %}
-                    <a class="profile-button" href="{% url 'newUser' %}">{{ user.username }}<i class="fa fa-user-circle-o" aria-hidden="true"></i></a>
-                    <a class="signup-button btn btn-outline-danger my-2 my-sm-0" href="{% url 'logout' %}" type="button">Logout</a>
+                    <a class="profile-button" href="{% url 'newUser' %}"><i class="fa fa-user-circle-o" id="smallAicon" aria-hidden="true"></i><a id="smallAname">{{ user.username }}<i class="fa fa-chevron-down" id="dropdown1" aria-hidden="true"></i></a></a>
+                    
                     {% else %}
                     <a class="login-button btn btn-outline-success my-2 my-sm-0" href="{% url 'login' %}" type="button">Log in</a>
                     <a class="signup-button btn btn-outline-danger my-2 my-sm-0" href="{% url 'signup' %}" type="button">Sign up</a>
                     {% endif %}
-                </div>
+                </div>  
             </form>
         </div>
     </nav>

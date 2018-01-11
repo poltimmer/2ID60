@@ -61,6 +61,16 @@
         $(this).text("Follow");
     };
   });
+  
+    
+  const $dropdown1 = $('.dropdown1');
+  const $Adropdown = $('#Adropdown');
+
+  $("#dropdown1").on('click', () => {
+    $(".Adropdown").toggle();
+    $(".fa-chevron-down").addclass("fa-rotate-90");
+    //$("#dropdown1").toggleClass(fa-rotate-180);
+  });
 
 
 

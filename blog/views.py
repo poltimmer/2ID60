@@ -7,6 +7,7 @@ from django.core.files.storage import FileSystemStorage
 from blog.forms import SignUpForm, ImageUploadForm
 from django.http.response import HttpResponseForbidden, HttpResponse
 from django.contrib.auth.models import User
+from .forms import PostForm
 
 
 
@@ -72,3 +73,7 @@ def upload2(request):
             m.save()
             return HttpResponse('image upload success')
     return HttpResponseForbidden('allowed only via POST')
+
+def post_new(request):
+    form = PostForm()
+    return render(request, 'blog/post_edit.html', {'form': form})

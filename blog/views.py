@@ -67,14 +67,26 @@ def simple_upload(request):
         })
     return render(request, 'blog/simple_upload.html')
 
-def upload2(request):
+# Profile picture upload
+def upload_pp(request):
     if request.method == 'POST':
         form = ImageUploadForm(request.POST, request.FILES)
         if form.is_valid():
             m = Profile.objects.get(pk=request.user.id)
             m.profilepicture = form.cleaned_data['image']
             m.save()
-            return HttpResponse('image upload success, go back to continue')
+            return redirect('newUser')
+    return HttpResponseForbidden('allowed only via POST')
+
+# Post image upload
+def upload_img(request):
+    if request.method == 'POST':
+        form = ImageUploadForm(request.POST, request.FILES)
+        if form.is_valid():
+            m = Post.objects.get(pk=Post.title)
+            m.img = form.cleaned_data['image']
+            m.save()
+            return redirect('newUser')
     return HttpResponseForbidden('allowed only via POST')
 
 def post_new(request):

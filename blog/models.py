@@ -13,8 +13,8 @@ class Post(models.Model):
             default=timezone.now)
     published_date = models.DateTimeField(
             blank=True, null=True)
-    postType = False #photo or job, could do 1 or 2.
-    imgUrl = '' #for postType photo. url to image, likely local. (not from the web)
+    postType = False #photo or job
+    img = models.ImageField(upload_to = 'img/', default = 'img/emptyPP.png') #for postType photo. url to image, likely local. (not from the web)
     skills = [] #for postType job. a list of skills required. could also be a dictionary.
     tags = [] #for postType photo. a list of tags for a picture. (landscape, nature, portrait) could also be a dictionary.
     jobType = [] #lists what job types the job belongs to. (webdesign, modeling, 3d render) Should just merge this with tags, but not with skills!
@@ -31,6 +31,7 @@ class Post(models.Model):
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     profilepicture = models.ImageField(upload_to = 'img/', default = 'img/emptyPP.png')
+    following = []
 
 @receiver(post_save, sender=User)
 def create_user_profile(sender, instance, created, **kwargs):

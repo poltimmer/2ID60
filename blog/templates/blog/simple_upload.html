@@ -17,9 +17,8 @@
   </head>
 
   <body>
-
-
-    <form action="{% url 'upload2' %}" method="post" enctype="multipart/form-data">{% csrf_token %}
+    <!-- SIMPLE UPLOAD -->
+    <form action="{% url 'upload_pp' %}" method="post" enctype="multipart/form-data">{% csrf_token %}
       <div class="form" style="margin-top: 100px;">
         <p>
             <input id="id_image" type="file" class="" name="image">

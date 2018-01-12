@@ -10,6 +10,6 @@ open.bat
 start.bat
 runserver.bat
 /blog/templates/blog/loggedin
-
 /blog/migrations/
 blog/migrations/0002_auto_20180109_1109.py
+/blog/static/media/img/

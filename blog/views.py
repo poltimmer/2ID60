@@ -22,21 +22,10 @@ def index(request):
 def examples(request):
     return render(request, 'blog/examples.html', {})
 
-@login_required(login_url='../login/')
+@login_required
 def newUser(request):
-    if request.method == "POST":
-        form = PostForm(request.POST)
-        if form.is_valid():
-            post = form.save(commit=False)
-            post.author = request.user
-            user = request.user
-            post.created_date = timezone.now()
-            post.save()
-        else:
-            form = PostForm()
-
-    user_posts = Post.objects.all()
-    return render(request, 'blog/newUser.html', {'user_posts':user_posts,'form': form})
+    posts = Post.objects.all()
+    return render(request, 'blog/newUser.html', {'posts':posts})
 
 def discover(request):
     return render(request, 'blog/discover.html', {})

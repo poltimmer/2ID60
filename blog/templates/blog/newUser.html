@@ -70,7 +70,10 @@
           <a href="{% url 'post_new' %}">  <img class="card-img-top profile-pic" style="margin-left: 25%" src="{% static 'img/uploadSymbol.png' %}" alt="Upload"></a>
           </div>
           <div class="card-body">
-            
+            {% for post in user_posts %}
+                   <p>{{ post.title }}</p>
+
+
 
 
               <!--<p class="card-text">{{user.Posts.title}}</p>-->

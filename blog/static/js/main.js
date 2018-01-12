@@ -68,8 +68,8 @@
 
   $("#dropdown1").on('click', () => {
     $(".Adropdown").toggle();
-    $(".fa-chevron-down").addclass("fa-rotate-90");
-    //$("#dropdown1").toggleClass(fa-rotate-180);
+    $(".fa-caret-down").toggleClass("fa-rotate-180");
+    
   });
 
 

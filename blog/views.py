@@ -22,7 +22,11 @@ def index(request):
 def examples(request):
     return render(request, 'blog/examples.html', {})
 
+<<<<<<< HEAD
 @login_required(login_url='../login/')
+=======
+@login_required
+>>>>>>> 66b835eacb5b8a31c0f7a985a9ce4a551da30576
 def newUser(request):
     return render(request, 'blog/newUser.html', {})
 

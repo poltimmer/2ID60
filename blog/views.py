@@ -24,7 +24,8 @@ def examples(request):
 
 @login_required
 def newUser(request):
-    posts = Post.objects.all()
+    posts = Post.objects.filter(author=request.user)
+    user = request.user
     return render(request, 'blog/newUser.html', {'posts':posts})
 
 def discover(request):

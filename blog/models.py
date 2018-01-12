@@ -19,7 +19,7 @@ class Post(models.Model):
     tags = [] #for postType photo. a list of tags for a picture. (landscape, nature, portrait) could also be a dictionary.
     jobType = [] #lists what job types the job belongs to. (webdesign, modeling, 3d render) Should just merge this with tags, but not with skills!
     downloads = 0 # for postType photo
-    price = models.CharField(max_length=7) #for photo
+    price = models.PositiveIntegerField(max_length=7) #for photo
 
     def publish(self):
         self.published_date = timezone.now()

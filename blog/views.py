@@ -73,7 +73,7 @@ def upload2(request):
             m = Profile.objects.get(pk=request.user.id)
             m.profilepicture = form.cleaned_data['image']
             m.save()
-            return HttpResponse('image upload success')
+            return HttpResponse('image upload success, go back to continue')
     return HttpResponseForbidden('allowed only via POST')
 
 def post_new(request):

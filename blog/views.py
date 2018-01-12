@@ -8,6 +8,7 @@ from blog.forms import SignUpForm, ImageUploadForm
 from django.http.response import HttpResponseForbidden, HttpResponse
 from django.contrib.auth.models import User
 from .forms import PostForm
+from django.contrib.auth.decorators import login_required
 
 
 
@@ -21,6 +22,7 @@ def index(request):
 def examples(request):
     return render(request, 'blog/examples.html', {})
 
+@login_required(login_url='../login/')
 def newUser(request):
     return render(request, 'blog/newUser.html', {})
 

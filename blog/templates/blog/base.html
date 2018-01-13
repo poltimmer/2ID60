@@ -41,6 +41,12 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'jobgallery' %}">Explore Job Offers</a>
                 </li>
+                <li class="nav-item mobiledropdown">
+                    <a class="nav-link" href="{% url 'jobgallery' %}">My Profile</a>
+                </li>
+                <li class="nav-item mobiledropdown">
+                    <a class="nav-link" href="{% url 'jobgallery' %}">Logout</a>
+                </li>
                 {% else %}
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'index' %}">Home<span class="sr-only">(current)</span></a>
@@ -57,7 +63,7 @@
             <div class="hide Adropdown">
                 <ul id="dropdownul">
                     <li><div id="dropdowncontainer"><a href="{% url 'newUser' %}" id="dropdownitem">My Profile</a></div></li>
-                    <li><div id="dropdowncontainer"><a href="{% url 'logout' %}" id="dropdownitem">Log Out</a></div></li>
+                    <li><div id="dropdowncontainer"><a href="{% url 'logout' %}" id="dropdownitem">Logout</a></div></li>
                 </ul>
             </div>
 
@@ -68,7 +74,7 @@
           <input class="form-control mr-sm-2" type="text" placeholder="Username" aria-label="Username">
           <input class="form-control mr-sm-2" type="text" placeholder="Password" aria-label="Password">
         -->
-                <div class="btn-toolbar">
+                <div class="btn-toolbar mobiletoolbar">
                     {% if user.is_authenticated %}
                     <a class="profile-button" href="{% url 'newUser' %}"><i class="fa fa-user-circle-o" id="smallAicon" aria-hidden="true"></i></a>
 

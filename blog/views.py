@@ -32,13 +32,12 @@ def discover(request):
     return render(request, 'blog/discover.html', {})
 
 def photogallery(request):
-    return render(request, 'blog/photogallery.html', {})
+    posts = Post.objects.all()
+    return render(request, 'blog/photogallery.html', {'posts':posts})
 
 def jobgallery(request):
-    return render(request, 'blog/jobgallery.html', {})
-
-
-
+    posts = Post.objects.filter(postType=True)
+    return render(request, 'blog/jobgallery.html', {'posts':posts})
 
 def signup(request):
     if request.method == 'POST':

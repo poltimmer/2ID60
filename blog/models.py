@@ -31,7 +31,11 @@ class Post(models.Model):
     published_date = models.DateTimeField(
             blank=True, null=True)
     postType = False #photo or job
+<<<<<<< HEAD
     img = models.ImageField(upload_to = path_and_rename('img/'), default = 'img/emptyPP.png') #for postType photo. url to image, likely local. (not from the web)
+=======
+    img = models.ImageField(upload_to = 'img/') #for postType photo. url to image, likely local. (not from the web)
+>>>>>>> 5632883c32ada3c49d046f26f2949a123383700a
     skills = [] #for postType job. a list of skills required. could also be a dictionary.
     tags = [] #for postType photo. a list of tags for a picture. (landscape, nature, portrait) could also be a dictionary.
     jobType = [] #lists what job types the job belongs to. (webdesign, modeling, 3d render) Should just merge this with tags, but not with skills!

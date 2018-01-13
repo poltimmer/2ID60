@@ -22,6 +22,7 @@ class Post(models.Model):
     downloads = 0 # for postType photo
     price = models.PositiveIntegerField() #for photo
 
+
     def publish(self):
         self.published_date = timezone.now()
         self.save()

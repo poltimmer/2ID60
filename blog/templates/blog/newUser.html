@@ -48,10 +48,12 @@
       </div>
 
 <!-- START OF IMAGE UPLOAD-->
+<a href="{% url 'post_new' %}">  <img class="profile-pic" style="margin-left: 46%; width: 150px; height: 150px;" src="{% static 'img/uploadSymbol.png' %}" alt="Upload"></a>
+
     <!-- START OF CARD GROUPS ROW1-->
       <div class="container">
         <div class="row">
-          {% for post in posts%}
+          {% for post in posts reversed%}
           <div class="col-lg-4 col-md-6 post-card">
             <img class="card-img-top" src="/static/media/{{ post.img }}" alt="Upload your image here">
             <div class="post-body">

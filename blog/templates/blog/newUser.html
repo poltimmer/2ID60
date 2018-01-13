@@ -29,7 +29,7 @@
               <button type="button" class="profile-btn btn btn-dark" data-toggle="modal" data-target="#myModal">Contact</button>
 
                 <!-- Modal -->
-                <div class="modal fade" id="myModal" role="dialog">
+                <div class="mo dal fade" id="myModal" role="dialog">
                   <div class="modal-dialog">
                     <!-- Modal content-->
                     <div class="modal-content">
@@ -64,10 +64,11 @@
           <a href="{% url 'post_new' %}">  <img class="card-img-top profile-pic" style="margin-left: 25%" src="{% static 'img/uploadSymbol.png' %}" alt="Upload"></a>
           </div>
           <div class="card-body">
-            {% for post in posts %}
-                   <h6>{{ post.title }}:&nbsp{{ post.price }}&nbsp€</h6>
-                   
+            {% for post in posts%}
 
+              {% if forloop.counter == 1 %}
+                <h6>{{ post.title }}:&nbsp{{ post.price }}&nbsp€</h6>
+              {% endif %}
             {% endfor %}
 
               <!--<p class="card-text">{{user.Posts.title}}</p>-->
@@ -81,6 +82,12 @@
             <a href="{% url 'post_new' %}">  <img class="card-img-top profile-pic" style="margin-left: 25%" src="{% static 'img/uploadSymbol.png' %}" alt="Upload"></a>
           </div>
           <div class="card-body">
+            {% for post in posts%}
+
+              {% if forloop.counter == 2 %}
+                <h6>{{ post.title }}:&nbsp{{ post.price }}&nbsp€</h6>
+              {% endif %}
+            {% endfor %}
 
 
               <!--<p class="card-text">Click to add a Title and Price</p>-->
@@ -95,7 +102,12 @@
             <a href="{% url 'post_new' %}">  <img class="card-img-top profile-pic" style="margin-left: 25%" src="{% static 'img/uploadSymbol.png' %}" alt="Upload"></a>
           </div>
           <div class="card-body">
+            {% for post in posts%}
 
+              {% if forloop.counter == 3 %}
+                <h6>{{ post.title }}:&nbsp{{ post.price }}&nbsp€</h6>
+              {% endif %}
+            {% endfor %}
               <!--<p class="card-text">Click to add a Title and Price</p>-->
 
             <!--<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>-->
@@ -108,47 +120,66 @@
       <div class="card-deck">
         <div class="card text-white bg-dark mb-3">
           <img class="card-img-top" src="{% static 'img/upload.png' %}" alt="Card image cap">
+          <div class="card-img-overlay">
+            <a href="{% url 'post_new' %}">  <img class="card-img-top profile-pic" style="margin-left: 25%" src="{% static 'img/uploadSymbol.png' %}" alt="Upload"></a>
+          </div>
           <div class="card-body">
-            <div id="edit" contenteditable="true">
-              <h4 class="card-title">Click here to add a Title</h4>
-              <p class="card-text">and a description or price tag</p>
-            </div>
+            {% for post in posts%}
+
+              {% if forloop.counter == 4 %}
+                <h6>{{ post.title }}:&nbsp{{ post.price }}&nbsp€</h6>
+              {% endif %}
+            {% endfor %}
+
+
+              <!--<p class="card-text">Click to add a Title and Price</p>-->
+
             <!--<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>-->
-            <div class="card-btn text-center">
-              <br>
-              <br>
-              <a id="UploadImage" type="button" href="{% url 'simple_upload' %}" class="btn btn-primary">Upload</a>
-            </div>
+
           </div>
         </div>
+
+
         <div class="card text-white bg-dark mb-3">
           <img class="card-img-top" src="{% static 'img/upload.png' %}" alt="Card image cap">
+          <div class="card-img-overlay">
+            <a href="{% url 'post_new' %}">  <img class="card-img-top profile-pic" style="margin-left: 25%" src="{% static 'img/uploadSymbol.png' %}" alt="Upload"></a>
+          </div>
           <div class="card-body">
-            <div id="edit" contenteditable="true">
-              <h4 class="card-title">Click here to add a Title</h4>
-              <p class="card-text">and a description or price tag</p>
-            </div>
+            {% for post in posts%}
+
+              {% if forloop.counter == 5 %}
+                <h6>{{ post.title }}:&nbsp{{ post.price }}&nbsp€</h6>
+              {% endif %}
+            {% endfor %}
+
+
+              <!--<p class="card-text">Click to add a Title and Price</p>-->
+
             <!--<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>-->
-            <div class="card-btn text-center">
-              <br>
-              <br>
-              <a id="UploadImage" type="button" href="{% url 'simple_upload' %}" class="btn btn-primary">Upload</a>
-            </div>
+
           </div>
         </div>
+
+
         <div class="card text-white bg-dark mb-3">
           <img class="card-img-top" src="{% static 'img/upload.png' %}" alt="Card image cap">
+          <div class="card-img-overlay">
+            <a href="{% url 'post_new' %}">  <img class="card-img-top profile-pic" style="margin-left: 25%" src="{% static 'img/uploadSymbol.png' %}" alt="Upload"></a>
+          </div>
           <div class="card-body">
-            <div id="edit" contenteditable="true">
-              <h4 class="card-title">Click here to add a Title</h4>
-              <p class="card-text">and a description or price tag</p>
-            </div>
+            {% for post in posts%}
+
+              {% if forloop.counter == 6 %}
+                <h6>{{ post.title }}:&nbsp{{ post.price }}&nbsp€</h6>
+              {% endif %}
+            {% endfor %}
+
+
+              <!--<p class="card-text">Click to add a Title and Price</p>-->
+
             <!--<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>-->
-            <div class="card-btn text-center">
-              <br>
-              <br>
-              <a id="UploadImage" type="button" href="{% url 'simple_upload' %}" class="btn btn-primary">Upload</a>
-            </div>
+
           </div>
         </div>
       </div>

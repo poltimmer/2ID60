@@ -21,7 +21,7 @@ urlpatterns = [
     url(r'^upload_img/$', views.upload_img, name='upload_img'),
     url(r'^post/new/$', views.post_new, name='post_new'),
     url(r'^userlist/$', views.userlist, name='userlist'),
-    url(r'^user/(?P<pk>\d+)/$', views.userprofile, name='userprofile'),
+    url(r'^user/(?P<pk>[a-zA-Z0-9]+)/$', views.userprofile, name='userprofile')
 ]
 
 if settings.DEBUG:

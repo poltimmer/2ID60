@@ -121,6 +121,9 @@ def userlist(request):
     return render(request, 'blog/userlist.html', { 'users': users })
 
 def userprofile(request, pk):
-    posts = Post.objects.filter(author=pk)
-    user = get_object_or_404(User, pk=pk)
-    return render(request, 'blog/userprofile.html', { 'posts': posts })
+    try:
+        user = User.objects.get(username=pk)
+    except:
+        return 404
+    posts = Post.objects.filter(author=user.pk)
+    return render(request, 'blog/userprofile.html', { 'posts': posts, 'user': user })

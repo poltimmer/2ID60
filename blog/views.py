@@ -92,9 +92,9 @@ def upload_img(request):
 
 def post_new(request):
     if request.method == "POST":
-        form = PostForm(request.POST)
+        form = PostForm(request.POST, request.FILES)
         if form.is_valid():
-            post = form.save(commit=False)
+            post = form.save()
             post.author = request.user
             post.published_date = timezone.now()
             post.save()

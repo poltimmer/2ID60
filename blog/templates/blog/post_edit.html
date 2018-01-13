@@ -36,7 +36,7 @@
         </form>
 
 
-        <form method="POST" class="post-form">{% csrf_token %}
+        <form enctype="multipart/form-data" method="POST" class="post-form">{% csrf_token %}
           <div class="form" style="margin-top: 100px;">
             <h4>Description</h4>
             {{ form.as_p }}

@@ -20,6 +20,8 @@ urlpatterns = [
     url(r'^upload_pp/$', views.upload_pp, name='upload_pp'),
     url(r'^upload_img/$', views.upload_img, name='upload_img'),
     url(r'^post/new/$', views.post_new, name='post_new'),
+    url(r'^userlist/$', views.userlist, name='userlist'),
+    url(r'^user/(?P<pk>\d+)/$', views.userprofile, name='userprofile'),
 ]
 
 if settings.DEBUG:

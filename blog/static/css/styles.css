@@ -523,3 +523,7 @@ footer {
 .photodesc {
   font-weight: 100 !important;
 }
+
+.photoprice {
+  text-align: right;
+}

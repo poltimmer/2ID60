@@ -4,11 +4,6 @@
 
 {% block content %}
     <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
 
     <!-- START OF PROFILE PICTURE -->
       <div class="Profile-info container">
@@ -53,26 +48,19 @@
       </div>
 
 <!-- START OF IMAGE UPLOAD-->
-<br>
-<br>
-
     <!-- START OF CARD GROUPS ROW1-->
-      <div class="card-deck cards-sm-6 cards-md-4 cards-lg-3">
-        {% for post in posts%}
-        <div class="card text-white bg-dark mb-3">
-          <img class="card-img-top" src="{% static 'img/upload.png' %}" alt="Upload your image here">
-          <div class="card-img-overlay">
-          <a href="{% url 'post_new' %}">  <img class="card-img-top profile-pic" style="margin-left: 25%" src="{% static 'img/uploadSymbol.png' %}" alt="Upload"></a>
+      <div class="container">
+        <div class="row">
+          {% for post in posts%}
+          <div class="col-lg-4 col-md-6 post-card">
+            <img class="card-img-top" src="/static/media/{{ post.img }}" alt="Upload your image here">
+            <div class="post-body">
+                  <h6 class="post-text">{{ post.title }}:&nbsp{{ post.price }}&nbsp€</h6>
+            </div>
           </div>
-          <div class="card-body">
-                <h6>{{ post.title }}:&nbsp{{ post.price }}&nbsp€</h6>
-              <!--<p class="card-text">{{user.Posts.title}}</p>-->
-
-            <!--<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>-->
-          </div>
+          {% endfor %}
         </div>
-        {% endfor %}
-      </div>
+    </div>
     <!-- END OF CARD GROUPS ROW1-->
     <!-- START OF CARD GROUPS ROW2
     <div class="card-deck">

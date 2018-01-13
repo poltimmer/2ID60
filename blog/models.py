@@ -6,6 +6,7 @@ from django.dispatch import receiver
 from django import forms
 
 class Post(models.Model):
+    id = models.AutoField(primary_key=True)
     author = models.ForeignKey(User, null=True, blank=True) #formerly 'author'
     title = models.CharField(max_length=200)
     text = models.TextField() #description

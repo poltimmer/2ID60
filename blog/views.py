@@ -84,7 +84,7 @@ def upload_img(request):
     if request.method == 'POST':
         form = ImageUploadForm(request.POST, request.FILES)
         if form.is_valid():
-            m = Post.objects.get(pk=Post.title)
+            m = Post.objects.get(pk=Post.id)
             m.img = form.cleaned_data['image']
             m.save()
             return redirect('newUser')

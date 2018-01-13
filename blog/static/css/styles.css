@@ -348,20 +348,20 @@ footer {
     padding: 5px!important;
     position: relative;
     top: 2px;
-    
+
 }
 
 #smallAname {
     color: whitesmoke !important;
     position: relative!important;
     top: 6px;
-    
+
 }
 
 #dropdown1 {
-   
+
     position: relative !important;
-    bottom: 2px; 
+    bottom: 2px;
     top: 0px;
     transition: 100ms;
     padding: 3px!important;
@@ -376,7 +376,7 @@ footer {
     width: 120px;
     border-bottom-left-radius: 3px;
     border-bottom-right-radius: 3px;
-   
+
 }
 #dropdownitem {
     color: black !important;
@@ -395,9 +395,9 @@ footer {
 #dropdownitemcontainer {
     width: auto!important;
     height: auto!important;
-    
+
     border-bottom: 1px solid #afafaf!important;
-    
+
 }
 
 .hide {
@@ -412,7 +412,7 @@ footer {
     right: 0px;
     top: 7px;
     padding-left: 0px!important;
-    
+
 }
 
 .customnavbar {
@@ -422,7 +422,7 @@ footer {
 #dropdowncontainer {
     width: 100%;
     border-bottom: 1px solid #e0e0e0!important;
-    
+
 }
 
 #dropdowncontainer:hover {
@@ -430,11 +430,32 @@ footer {
     border-bottom: 1px solid #e0e0e0!important;
     background-color: #d1d3d2;
     cursor:pointer;
-    
+
 }
 
 @media (max-width: 767px){
-  .customnavbar {
-    height: auto;
+    .customnavbar {
+      height: auto;
+  }
 }
+
+.post-card {
+  margin: 10px auto;
+  border-radius: 5px;
+}
+
+.post-body {
+    background: #464646;
+    height: 50px;
+    padding: 10px;
+    display:  flex;
+    align-items: center;
+    align-content:  center;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+
+.post-text {
+  color: #f9f9f9;
+  margin: auto;
 }

@@ -17,32 +17,15 @@
   </head>
 
   <body>
-        <form action="{% url 'upload_img' %}" method="post" enctype="multipart/form-data">{% csrf_token %}
-          <div class="form" style="margin-top: 100px;">
-            <h4>Upload Image</h4>
-            <p>
-                <input id="id_image" type="file" class="" name="image">
-            </p>
-            <button type="submit" value="Submit">SUBMIT</button>
-            {% if uploaded_file_url %}
-              <!--<p>File uploaded at: <a href="{{ uploaded_file_url }}">{{ uploaded_file_url }}</a></p>-->
-              <p> Image has been successfully uploaded </P>
-            {% endif %}
-
-            <br>
-            <br>
-
-          </div>
-        </form>
-
 
         <form enctype="multipart/form-data" method="POST" class="post-form">{% csrf_token %}
           <div class="form" style="margin-top: 100px;">
-            <h4>Description</h4>
+            <h4>Upload your Image</h4>
             {{ form.as_p }}
             <p>in euros (€)</p>
-            <button type="submit" class="save btn btn-default">Save & Return to Profile</button>
             <br>
+            <br>
+            <button type="submit" class="save btn btn-default">UPLOAD</button>
             <br>
             <br>
             <a type="button" class="profile-btn btn btn-danger" href="{% url 'newUser' %}">Cancel</a>

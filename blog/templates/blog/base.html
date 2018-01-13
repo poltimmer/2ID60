@@ -4,10 +4,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    {% block head %}
-    {% endblock %}
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> {% block head %} {% endblock %}
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -20,7 +17,13 @@
 
 <body>
     <!--START OF NAVIGATION BAR -->
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+
+    <div class="page-header">
+        <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+        <h1><a href="/">Django Girls Blog</a></h1>
+    </div>
+
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top customnavbar">
         <a class="navbar-brand" href="{% url 'discover' %}">PhotoLand</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -35,18 +38,31 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'photogallery' %}">Explore Gallery</a>
                 </li>
-                 <li class="nav-item">
+                <li class="nav-item">
                     <a class="nav-link" href="{% url 'jobgallery' %}">Explore Job Offers</a>
                 </li>
                 {% else %}
                 <li class="nav-item">
-                  <a class="nav-link" href="{% url 'index' %}">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="{% url 'index' %}">Home<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="{% url 'examples' %}">Example</a>
+                    <a class="nav-link" href="{% url 'examples' %}">Example</a>
                 </li>
                 {% endif %}
             </ul>
+
+            <!--Dropdown Menu for account -->
+
+
+            <div class="hide Adropdown">
+                <ul id="dropdownul">
+                    <li><div id="dropdowncontainer"><a href="{% url 'newUser' %}" id="dropdownitem">My Profile</a></div></li>
+                    <li><div id="dropdowncontainer"><a href="{% url 'logout' %}" id="dropdownitem">Log Out</a></div></li>
+                </ul>
+            </div>
+
+
+
             <form class="form-inline my-2 my-lg-0">
                 <!--
           <input class="form-control mr-sm-2" type="text" placeholder="Username" aria-label="Username">
@@ -54,12 +70,11 @@
         -->
                 <div class="btn-toolbar">
                     {% if user.is_authenticated %}
-                    <a class="profile-button" href="{% url 'newUser' %}">{{ user.username }}<i class="fa fa-user-circle-o" aria-hidden="true"></i></a>
-                    <a class="signup-button btn btn-outline-danger my-2 my-sm-0" href="{% url 'logout' %}" type="button">Logout</a>
-                    {% else %}
+                    <a class="profile-button" href="{% url 'newUser' %}"><i class="fa fa-user-circle-o" id="smallAicon" aria-hidden="true"></i></a>
+
+                    <a id="dropdown1"><i class="fa fa-caret-down" aria-hidden="true" id="dropdown1"></i></a> {% else %}
                     <a class="login-button btn btn-outline-success my-2 my-sm-0" href="{% url 'login' %}" type="button">Log in</a>
-                    <a class="signup-button btn btn-outline-danger my-2 my-sm-0" href="{% url 'signup' %}" type="button">Sign up</a>
-                    {% endif %}
+                    <a class="signup-button btn btn-outline-danger my-2 my-sm-0" href="{% url 'signup' %}" type="button">Sign up</a> {% endif %}
                 </div>
             </form>
         </div>
@@ -111,15 +126,13 @@
     <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
     {% if user.is_authenticated %}
     <script>
-    $( document ).ready(function() {
-      $('.contentbox').addClass('side-active');
-      $('footer').addClass('side-active');
-    });
-    </script>
-    {% endif %}
+        $(document).ready(function() {
+            $('.contentbox').addClass('side-active');
+            $('footer').addClass('side-active');
+        });
 
-    {% block script %}
-    {% endblock %}
+    </script>
+    {% endif %} {% block script %} {% endblock %}
 
 </body>
 

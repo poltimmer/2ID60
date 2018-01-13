@@ -7,6 +7,8 @@ from django.core.files.storage import FileSystemStorage
 from blog.forms import SignUpForm, ImageUploadForm
 from django.http.response import HttpResponseForbidden, HttpResponse
 from django.contrib.auth.models import User
+from .forms import PostForm
+from django.contrib.auth.decorators import login_required
 
 
 
@@ -20,8 +22,11 @@ def index(request):
 def examples(request):
     return render(request, 'blog/examples.html', {})
 
+@login_required
 def newUser(request):
-    return render(request, 'blog/newUser.html', {})
+    posts = Post.objects.filter(author=request.user)
+    user = request.user
+    return render(request, 'blog/newUser.html', {'posts':posts})
 
 def discover(request):
     return render(request, 'blog/discover.html', {})
@@ -63,12 +68,51 @@ def simple_upload(request):
         })
     return render(request, 'blog/simple_upload.html')
 
-def upload2(request):
+# Profile picture upload
+def upload_pp(request):
     if request.method == 'POST':
         form = ImageUploadForm(request.POST, request.FILES)
         if form.is_valid():
             m = Profile.objects.get(pk=request.user.id)
             m.profilepicture = form.cleaned_data['image']
             m.save()
-            return HttpResponse('image upload success')
+            return redirect('newUser')
     return HttpResponseForbidden('allowed only via POST')
+
+# Post image upload
+def upload_img(request):
+    if request.method == 'POST':
+        form = ImageUploadForm(request.POST, request.FILES)
+        if form.is_valid():
+            m = Post.objects.get(pk=Post.title)
+            m.img = form.cleaned_data['image']
+            m.save()
+            return redirect('newUser')
+    return HttpResponseForbidden('allowed only via POST')
+
+def post_new(request):
+    if request.method == "POST":
+        form = PostForm(request.POST)
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.author = request.user
+            post.published_date = timezone.now()
+            post.save()
+            return redirect('newUser')
+    else:
+        form = PostForm()
+    return render(request, 'blog/post_edit.html', {'form': form})
+
+def post_edit(request, pk):
+    post = get_object_or_404(Post, pk=pk)
+    if request.method == "POST":
+        form = PostForm(request.POST, instance=post)
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.author = request.user
+            post.published_date = timezone.now()
+            post.save()
+            return redirect('post_detail', pk=post.pk)
+    else:
+        form = PostForm(instance=post)
+    return render(request, 'blog/post_edit.html', {'form': form})

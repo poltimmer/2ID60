@@ -342,3 +342,99 @@ footer {
     padding: 10px;
     border-radius: 100%;
 }
+
+#smallAicon {
+    margin: 0px;
+    padding: 5px!important;
+    position: relative;
+    top: 2px;
+    
+}
+
+#smallAname {
+    color: whitesmoke !important;
+    position: relative!important;
+    top: 6px;
+    
+}
+
+#dropdown1 {
+   
+    position: relative !important;
+    bottom: 2px; 
+    top: 0px;
+    transition: 100ms;
+    padding: 3px!important;
+}
+
+.Adropdown {
+    position: fixed;
+    background-color: whitesmoke;
+    top: 66px;
+    right: 22px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    width: 120px;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+   
+}
+#dropdownitem {
+    color: black !important;
+    font-weight:500;
+    padding-bottom: 2px;
+    width: 100%;
+    padding-left: 4px;
+}
+
+#dropdownitem:hover {
+    text-decoration: none!important;
+}
+
+
+
+#dropdownitemcontainer {
+    width: auto!important;
+    height: auto!important;
+    
+    border-bottom: 1px solid #afafaf!important;
+    
+}
+
+.hide {
+    display: none;
+}
+
+
+#dropdownul {
+    list-style: none;
+    text-decoration: none;
+    position: relative;
+    right: 0px;
+    top: 7px;
+    padding-left: 0px!important;
+    
+}
+
+.customnavbar {
+    height: 66px;
+}
+
+#dropdowncontainer {
+    width: 100%;
+    border-bottom: 1px solid #e0e0e0!important;
+    
+}
+
+#dropdowncontainer:hover {
+    width: 100%;
+    border-bottom: 1px solid #e0e0e0!important;
+    background-color: #d1d3d2;
+    cursor:pointer;
+    
+}
+
+@media (max-width: 767px){
+  .customnavbar {
+    height: auto;
+}
+}

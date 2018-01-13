@@ -58,66 +58,24 @@
 
     <!-- START OF CARD GROUPS ROW1-->
       <div class="card-deck cards-sm-6 cards-md-4 cards-lg-3">
+        {% for post in posts%}
         <div class="card text-white bg-dark mb-3">
           <img class="card-img-top" src="{% static 'img/upload.png' %}" alt="Upload your image here">
           <div class="card-img-overlay">
           <a href="{% url 'post_new' %}">  <img class="card-img-top profile-pic" style="margin-left: 25%" src="{% static 'img/uploadSymbol.png' %}" alt="Upload"></a>
           </div>
           <div class="card-body">
-            {% for post in posts%}
-
-              {% if forloop.counter == 1 %}
                 <h6>{{ post.title }}:&nbsp{{ post.price }}&nbsp€</h6>
-              {% endif %}
-            {% endfor %}
-
               <!--<p class="card-text">{{user.Posts.title}}</p>-->
 
             <!--<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>-->
           </div>
         </div>
-        <div class="card text-white bg-dark mb-3">
-          <img class="card-img-top" src="{% static 'img/upload.png' %}" alt="Card image cap">
-          <div class="card-img-overlay">
-            <a href="{% url 'post_new' %}">  <img class="card-img-top profile-pic" style="margin-left: 25%" src="{% static 'img/uploadSymbol.png' %}" alt="Upload"></a>
-          </div>
-          <div class="card-body">
-            {% for post in posts%}
-
-              {% if forloop.counter == 2 %}
-                <h6>{{ post.title }}:&nbsp{{ post.price }}&nbsp€</h6>
-              {% endif %}
-            {% endfor %}
-
-
-              <!--<p class="card-text">Click to add a Title and Price</p>-->
-
-            <!--<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>-->
-
-          </div>
-        </div>
-        <div class="card text-white bg-dark mb-3">
-          <img class="card-img-top" src="{% static 'img/upload.png' %}" alt="Card image cap">
-          <div class="card-img-overlay">
-            <a href="{% url 'post_new' %}">  <img class="card-img-top profile-pic" style="margin-left: 25%" src="{% static 'img/uploadSymbol.png' %}" alt="Upload"></a>
-          </div>
-          <div class="card-body">
-            {% for post in posts%}
-
-              {% if forloop.counter == 3 %}
-                <h6>{{ post.title }}:&nbsp{{ post.price }}&nbsp€</h6>
-              {% endif %}
-            {% endfor %}
-              <!--<p class="card-text">Click to add a Title and Price</p>-->
-
-            <!--<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>-->
-
-          </div>
-        </div>
+        {% endfor %}
       </div>
     <!-- END OF CARD GROUPS ROW1-->
-    <!-- START OF CARD GROUPS ROW2-->
-      <div class="card-deck">
+    <!-- START OF CARD GROUPS ROW2
+    <div class="card-deck">
         <div class="card text-white bg-dark mb-3">
           <img class="card-img-top" src="{% static 'img/upload.png' %}" alt="Card image cap">
           <div class="card-img-overlay">
@@ -132,9 +90,6 @@
             {% endfor %}
 
 
-              <!--<p class="card-text">Click to add a Title and Price</p>-->
-
-            <!--<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>-->
 
           </div>
         </div>
@@ -154,9 +109,6 @@
             {% endfor %}
 
 
-              <!--<p class="card-text">Click to add a Title and Price</p>-->
-
-            <!--<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>-->
 
           </div>
         </div>
@@ -176,14 +128,10 @@
             {% endfor %}
 
 
-              <!--<p class="card-text">Click to add a Title and Price</p>-->
-
-            <!--<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>-->
-
           </div>
         </div>
       </div>
-    <!-- END OF CARD GROUPS ROW2-->
+  END OF CARD GROUPS ROW2-->
 
     <br>
     <br>

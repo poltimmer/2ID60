@@ -21,7 +21,7 @@ class ImageUploadForm(forms.Form):
     image = forms.ImageField()
 
 class PostForm(forms.ModelForm):
-
     class Meta:
         model = Post
-        fields = ('title', 'price')
+
+        fields = ('title', 'img', 'price')

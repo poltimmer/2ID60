@@ -61,15 +61,19 @@
         $(this).text("Follow");
     };
   });
-  
-    
-  const $dropdown1 = $('.dropdown1');
-  const $Adropdown = $('#Adropdown');
+
 
   $("#dropdown1").on('click', () => {
     $(".Adropdown").toggle();
     $(".fa-caret-down").toggleClass("fa-rotate-180");
-    
+
+  });
+
+  $('input[name="usersearch"]').on('keydown', () => {
+    if (event.keyCode === 13) {
+      var search = $('input[name="usersearch"]').val();
+      window.location.href = "/search/u/" + search; + "/"
+    }
   });
 
 

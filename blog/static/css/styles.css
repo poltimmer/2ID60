@@ -355,6 +355,7 @@ footer {
 .wrapper {
     display: flex;
     align-items: stretch;
+    min-height: calc(100vh - 150px);
 }
 
 #sidebar {

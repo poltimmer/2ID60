@@ -403,6 +403,7 @@ footer {
     top: 0px;
     transition: 100ms;
     padding: 3px!important;
+    cursor: pointer;
 }
 
 .Adropdown {

@@ -12,6 +12,9 @@ from django.contrib.auth.decorators import login_required
 from friendship.models import Friend, Follow, FollowingManager
 
 
+from django.contrib import messages
+
+
 
 def index(request):
     """
@@ -117,6 +120,14 @@ def post_edit(request, pk):
         form = PostForm(instance=post)
     return render(request, 'blog/post_edit.html', {'form': form})
 
+def post_delete(request, pk):
+    post = get_object_or_404(Post, pk=pk)
+    post.delete()
+    #messages.success(request, "Successfully Deleted")
+    return redirect('newUser')
+
+
+
 def userlist(request):
     users = User.objects.all()
     return render(request, 'blog/userlist.html', { 'users': users })
@@ -134,6 +145,24 @@ def userprofile(request, pk):
         return render(request, 'blog/userprofile.html', { 'posts': posts, 'user': user, 'username': user.username,})
 
 
+<<<<<<< HEAD
+@login_required
+def friend_add(request):
+  if 'username' in request.GET:
+    friend = get_object_or_404(
+      User, username=request.GET['username']
+    )
+    friendship = Friendship(
+      from_friend=request.user,
+      to_friend=friend
+    )
+    friendship.save()
+    return HttpResponseRedirect(
+      '/user/%s/' % request.user.username
+    )
+  else:
+    raise Http404
+=======
 def follow(request, pk):
     followed = User.objects.get(username=pk)
     Follow.objects.add_follower(request.user, followed)
@@ -143,3 +172,4 @@ def unfollow(request, pk):
     followed = User.objects.get(username=pk)
     Follow.objects.remove_follower(request.user, followed)
     return redirect('userprofile', pk=pk)
+>>>>>>> ee13c917cca50a0e0fe3c84fbfdb30bb74876999

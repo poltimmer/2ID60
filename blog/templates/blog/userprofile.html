@@ -1,0 +1,69 @@
+{% extends 'blog/base.html' %}
+
+{% load staticfiles %}
+
+{% block content %}
+    <br>
+
+    <!-- START OF PROFILE PICTURE -->
+      <div class="Profile-info container">
+        <div class="row">
+          <div class="pp col-md-6">
+
+              <img class="profile-pic" src="/static/media/{{ user.profile.profilepicture }}" alt="Profile Picture">
+
+          </div>
+          <div class="artist-info col-md-6">
+            <h2> {{ user.username }} </h2>
+            <h5 style="color: #737373"> {{ user.first_name }}{{ user.last_name }}</h5>
+            <br>
+            <div>
+              <a id="UploadPP" type="button" href="{% url 'simple_upload' %}" class="profile-btn btn btn-primary">Upload Profile Picture</a>
+              <!--<button type="button" class="btn btn-danger">Like</button>-->
+              <button type="button" class="profile-btn btn btn-success">Share</button>
+              <button type="button" class="profile-btn btn btn-dark" data-toggle="modal" data-target="#myModal">Contact</button>
+              <a href="/user/add/?username={{ user.username }}">
+       add {{ username }} to your friends</a>
+                <!-- Modal -->
+                <div class="mo dal fade" id="myModal" role="dialog">
+                  <div class="modal-dialog">
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">E-mail</h4>
+                      </div>
+                      <div class="modal-body">
+                        <p>{{ user.email }}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+<!-- START OF IMAGE UPLOAD-->
+<div class="container-fluid text-center">
+<a href="{% url 'post_new' %}">  <img class="profile-pic" style="width: 150px; height: 150px;" src="{% static 'img/uploadSymbol.png' %}" alt="Upload"></a>
+</div>
+    <!-- START OF CARD GROUPS ROW1-->
+      <div class="container">
+        <div class="row">
+          {% for post in posts reversed %}
+          <div class="col-lg-4 col-md-6 post-card">
+            <img class="card-img-top" src="/static/media/{{ post.img }}" alt="Upload your image here">
+            <div class="post-body">
+                  <h6 class="post-text">{{ post.title }}:&nbsp{{ post.price }}&nbsp€</h6>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+    </div>
+    <!-- END OF CARD GROUPS ROW1-->
+
+    <br>
+    <br>
+    <br>
+  {% endblock %}

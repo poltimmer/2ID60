@@ -1,0 +1,12 @@
+{% block head %}
+<title>PhotoLand</title>
+{% endblock %}
+
+{% block content %}
+{% for u in users %}
+<a href="{% url 'userprofile' pk=u.pk %}">{{ u.username }}</a>
+{% endfor %}
+{% endblock %}
+
+{% block script %}
+{% endblock %}

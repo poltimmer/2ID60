@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.utils import timezone
 from .models import Post, Profile
 from django.contrib.auth import login, authenticate
@@ -115,3 +115,32 @@ def post_edit(request, pk):
     else:
         form = PostForm(instance=post)
     return render(request, 'blog/post_edit.html', {'form': form})
+
+def userlist(request):
+    users = User.objects.all()
+    return render(request, 'blog/userlist.html', { 'users': users })
+
+def userprofile(request, pk):
+    try:
+        user = User.objects.get(username=pk)
+    except:
+        return 404
+    posts = Post.objects.filter(author=user.pk)
+    return render(request, 'blog/userprofile.html', { 'posts': posts, 'user': user, 'username': user.username})
+
+@login_required
+def friend_add(request):
+  if 'username' in request.GET:
+    friend = get_object_or_404(
+      User, username=request.GET['username']
+    )
+    friendship = Friendship(
+      from_friend=request.user,
+      to_friend=friend
+    )
+    friendship.save()
+    return HttpResponseRedirect(
+      '/user/%s/' % request.user.username
+    )
+  else:
+    raise Http404

@@ -590,3 +590,7 @@ footer {
         margin: auto;
     }
 }
+
+.photoprice {
+  text-align: right;
+}

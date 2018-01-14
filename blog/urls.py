@@ -22,14 +22,10 @@ urlpatterns = [
     url(r'^post/new/$', views.post_new, name='post_new'),
     url(r'^userlist/$', views.userlist, name='userlist'),
     url(r'^user/(?P<pk>[a-zA-Z0-9]+)/$', views.userprofile, name='userprofile'),
-<<<<<<< HEAD
     url(r'^user/add/$', views.friend_add, name='friend_add'),
     url(r'^post/delete/(?P<pk>\d+)$', views.post_delete, name='post_delete'),
-
-=======
     url(r'^user/(?P<pk>[a-zA-Z0-9]+)/follow/$', views.follow, name='follow'),
     url(r'^user/(?P<pk>[a-zA-Z0-9]+)/unfollow/$', views.unfollow, name='unfollow'),
->>>>>>> ee13c917cca50a0e0fe3c84fbfdb30bb74876999
 ]
 
 if settings.DEBUG:

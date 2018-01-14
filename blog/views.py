@@ -10,8 +10,6 @@ from django.contrib.auth.models import User
 from .forms import PostForm
 from django.contrib.auth.decorators import login_required
 from friendship.models import Friend, Follow, FollowingManager
-
-
 from django.contrib import messages
 
 
@@ -145,7 +143,7 @@ def userprofile(request, pk):
         return render(request, 'blog/userprofile.html', { 'posts': posts, 'user': user, 'username': user.username,})
 
 
-<<<<<<< HEAD
+
 @login_required
 def friend_add(request):
   if 'username' in request.GET:
@@ -162,7 +160,6 @@ def friend_add(request):
     )
   else:
     raise Http404
-=======
 def follow(request, pk):
     followed = User.objects.get(username=pk)
     Follow.objects.add_follower(request.user, followed)
@@ -172,4 +169,3 @@ def unfollow(request, pk):
     followed = User.objects.get(username=pk)
     Follow.objects.remove_follower(request.user, followed)
     return redirect('userprofile', pk=pk)
->>>>>>> ee13c917cca50a0e0fe3c84fbfdb30bb74876999

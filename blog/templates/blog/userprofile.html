@@ -20,7 +20,7 @@
             <h5 style="color: #737373"> {{ user.first_name }}{{ user.last_name }}</h5>
             <br>
             <div>
-              <a id="UploadPP" type="button" href="{% url 'simple_upload' %}" class="profile-btn btn btn-primary">Upload Profile Picture</a>
+
               <!--<button type="button" class="btn btn-danger">Like</button>-->
               <button type="button" class="profile-btn btn btn-success">Share</button>
               <button type="button" class="profile-btn btn btn-dark" data-toggle="modal" data-target="#myModal">Contact</button>
@@ -52,9 +52,6 @@
       </div>
 
 <!-- START OF IMAGE UPLOAD-->
-<div class="container-fluid text-center">
-<a href="{% url 'post_new' %}">  <img class="profile-pic" style="width: 150px; height: 150px;" src="{% static 'img/uploadSymbol.png' %}" alt="Upload"></a>
-</div>
     <!-- START OF CARD GROUPS ROW1-->
       <div class="container">
         <div class="row">

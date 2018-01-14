@@ -248,6 +248,7 @@ footer {
 .fa:hover {
     color: #666666;
     text-decoration: none;
+    cursor: pointer;
 }
 
 
@@ -355,6 +356,7 @@ footer {
 .wrapper {
     display: flex;
     align-items: stretch;
+    min-height: calc(100vh - 150px);
 }
 
 #sidebar {
@@ -565,7 +567,7 @@ footer {
     text-transform:uppercase;
     margin: auto;
     padding-left: 10px;
-    right: 6px;
+
 
 
 
@@ -617,7 +619,7 @@ footer {
 
 .photoprice {
     margin: 0px!important;
-    margin-top: 6px!important;
+
     font-weight: 450!important;
     color: #d12c2a!important;
     display: inline-block;
@@ -632,6 +634,7 @@ footer {
     line-height: 17px!important;
     font-weight: 450!important;
     display: inline-block;
+
 }
 
 .fh5co-desc {
@@ -674,9 +677,31 @@ footer {
   text-align: center;
 }
 
-
-
 .container10 {
   position: relative;
   width: 50%;
+}
+
+.column {
+  width: 33.3% !important;
+}
+
+@media (max-width: 850px) {
+  .column {
+    width: 50% !important;
+  }
+}
+
+
+
+@media (max-width: 1199px) {
+  .column {
+    width: 50% !important;
+  }
+}
+
+@media (max-width: 770px) {
+  .column {
+    width: 100% !important;
+  }
 }

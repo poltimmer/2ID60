@@ -545,8 +545,8 @@ footer {
 
 .profileavatar {
     border-radius: 50%;
-    width: 200px;
-    height: 200px;
+    width: 220px;
+    height: 220px;
     object-fit: cover;
 }
 
@@ -606,8 +606,8 @@ footer {
   bottom: 0;
   left: 0;
   right: 0;
-  height: 200px;
-  width: 200px;
+  height: 220px;
+  width: 220px;
   opacity: 0;
   transition: .5s ease;
   background-color: #008CBA;

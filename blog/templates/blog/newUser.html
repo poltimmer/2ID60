@@ -30,12 +30,12 @@
                   <img class="profileavatar image10" src="/static/media/{{ user.profile.profilepicture }}" alt="Profile Picture">
                   <a href="{% url 'simple_upload' %}">
                     <div class="overlay">
-                      <div class="text10">Edit Picture</div>
+                      <div class="text10">Edit Profile Picture</div>
                     </div>
                   </a>
                 </div>
 
-                <div class="namediv">
+                <div class="namediv" style = "margin-left: 60px">
                     <p class="profilename">{{ user.username }}</p>
                 </div>
             </div>
@@ -44,8 +44,8 @@
 </div>
 
 <!-- START OF IMAGE UPLOAD-->
-<div>
-    <a href="{% url 'post_new' %}">  <img class="uploadbutton" style="width: 150px; height: 150px;" src="{% static 'img/uploadSymbol.png' %}" alt="Upload"></a>
+<div class="text-center">
+    <a href="{% url 'post_new' %}">  <img class="uploadbutton" style="width: 80px; height: 80px;" src="{% static 'img/uploadSymbol.png' %}" alt="Upload"></a>
 </div>
 <!-- START OF CARD GROUPS ROW1-->
 <div id="fh5co-main" class="">

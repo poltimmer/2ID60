@@ -38,10 +38,6 @@ def photogallery(request):
     posts = Post.objects.all()
     return render(request, 'blog/photogallery.html', {'posts':posts})
 
-def jobgallery(request):
-    posts = Post.objects.filter(postType=True)
-    return render(request, 'blog/jobgallery.html', {'posts':posts})
-
 def signup(request):
     if request.method == 'POST':
         form = SignUpForm(request.POST)

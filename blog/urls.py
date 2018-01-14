@@ -11,7 +11,6 @@ urlpatterns = [
     url(r'^myprofile/$', views.newUser, name='newUser'),
     url(r'^discover/$', views.discover, name='discover'),
     url(r'^photogallery/$', views.photogallery, name='photogallery'),
-    url(r'^jobgallery/$', views.jobgallery, name='jobgallery'),
     url(r'^accounts/login/$', auth_views.login, name='login'),
     url(r'^logout/$', auth_views.logout, {'next_page': '/'}, name='logout'),
     url(r'^signup/$', views.signup, name='signup'),

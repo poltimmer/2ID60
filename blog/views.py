@@ -9,6 +9,7 @@ from django.http.response import HttpResponseForbidden, HttpResponse
 from django.contrib.auth.models import User
 from .forms import PostForm
 from django.contrib.auth.decorators import login_required
+from friendship.models import Friend, Follow, FollowingManager
 
 
 
@@ -126,21 +127,19 @@ def userprofile(request, pk):
     except:
         return 404
     posts = Post.objects.filter(author=user.pk)
-    return render(request, 'blog/userprofile.html', { 'posts': posts, 'user': user, 'username': user.username})
+    if request.user.is_authenticated():
+        already_following = FollowingManager.follows(request.user, request.user, user)
+        return render(request, 'blog/userprofile.html', { 'posts': posts, 'user': user, 'username': user.username, 'already_following': already_following})
+    else:
+        return render(request, 'blog/userprofile.html', { 'posts': posts, 'user': user, 'username': user.username,})
 
-@login_required
-def friend_add(request):
-  if 'username' in request.GET:
-    friend = get_object_or_404(
-      User, username=request.GET['username']
-    )
-    friendship = Friendship(
-      from_friend=request.user,
-      to_friend=friend
-    )
-    friendship.save()
-    return HttpResponseRedirect(
-      '/user/%s/' % request.user.username
-    )
-  else:
-    raise Http404
+
+def follow(request, pk):
+    followed = User.objects.get(username=pk)
+    Follow.objects.add_follower(request.user, followed)
+    return redirect('userprofile', pk=pk)
+
+def unfollow(request, pk):
+    followed = User.objects.get(username=pk)
+    Follow.objects.remove_follower(request.user, followed)
+    return redirect('userprofile', pk=pk)

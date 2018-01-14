@@ -26,10 +26,14 @@
                     <div class="animate-box">
                         <a href="/static/media/{{ post.img }}" class="image-popup fh5co-board-img" title="{{post.title}}"><img src="/static/media/{{ post.img }}" alt="Free HTML5 Bootstrap template"></a>
                     </div>
-                    <div class="fh5co-desc">{{post.title}}
-                        <hr>
-                        <p class="photodesc">{{post.text}}</p>
-                    </div>
+										<div class="fh5co-desc">
+											<h5 class="phototitle">{{post.title}}</h5>
+											<hr>
+											<h6 class="photoauthor">{{post.author}}</h6>
+											<p class="photodesc">{{post.text}}</p>
+											<p class="photoprice">{{post.price}}€</p>
+										</div>
+
                 </div>
                 {% endfor %}
 

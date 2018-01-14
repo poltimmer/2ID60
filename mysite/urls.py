@@ -23,5 +23,5 @@ from blog import views as blog_views
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'', include('blog.urls')),
-
+    url(r'^friendship/', include('friendship.urls'))
 ]

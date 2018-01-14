@@ -2,6 +2,7 @@
     background-color: lightblue;
     padding: 0 0 0 0;
     font-weight: 200;
+
 }
 
 .contentbox {
@@ -235,6 +236,7 @@ footer {
     background-color: #323D41;
     padding: 5%;
     color: #FFF;
+
 }
 
 .fa {
@@ -543,8 +545,8 @@ footer {
 
 .profileavatar {
     border-radius: 50%;
-    width: 200px;
-    height: 200px;
+    width: 220px;
+    height: 220px;
     object-fit: cover;
 }
 
@@ -566,7 +568,10 @@ footer {
 }
 
 .profilegallery {
-    background-color: grey;
+    background-color: whitesmoke!important;
+    padding-top: 1px!important;
+    border-radius: 3px;
+
 }
 
 
@@ -593,4 +598,41 @@ footer {
 
 .photoprice {
   text-align: right;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 220px;
+  width: 220px;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: #008CBA;
+  border-radius: 50%;
+}
+
+.container10:hover .overlay {
+  opacity: 1;
+}
+
+.text10 {
+  color: white;
+  font-size: 30px;
+  font-weight: 500;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+
+
+.container10 {
+  position: relative;
+  width: 50%;
 }

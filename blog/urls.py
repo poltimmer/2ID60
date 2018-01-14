@@ -24,6 +24,7 @@ urlpatterns = [
     url(r'^user/(?P<pk>[a-zA-Z0-9]+)/$', views.userprofile, name='userprofile'),
     url(r'^user/(?P<pk>[a-zA-Z0-9]+)/follow/$', views.follow, name='follow'),
     url(r'^user/(?P<pk>[a-zA-Z0-9]+)/unfollow/$', views.unfollow, name='unfollow'),
+    url(r'^search/u/(?P<pk>[a-zA-Z0-9]+)/$', views.usersearch, name='usersearch'),
 ]
 
 if settings.DEBUG:

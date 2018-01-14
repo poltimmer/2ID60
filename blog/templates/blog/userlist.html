@@ -1,10 +1,12 @@
+<!-- {% extends 'blog/base.html' %} -->
+
 {% block head %}
 <title>PhotoLand</title>
 {% endblock %}
 
 {% block content %}
 {% for u in users %}
-<a href="{% url 'userprofile' pk=u.pk %}">{{ u.username }}</a>
+<a href="{% url 'userprofile' pk=u.username %}">{{ u.username }}</a>
 {% endfor %}
 {% endblock %}
 

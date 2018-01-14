@@ -133,7 +133,7 @@ def userprofile(request, pk):
     else:
         return render(request, 'blog/userprofile.html', { 'posts': posts, 'user': user, 'username': user.username,})
 
-
+#follow and unfollow
 def follow(request, pk):
     followed = User.objects.get(username=pk)
     Follow.objects.add_follower(request.user, followed)
@@ -143,3 +143,9 @@ def unfollow(request, pk):
     followed = User.objects.get(username=pk)
     Follow.objects.remove_follower(request.user, followed)
     return redirect('userprofile', pk=pk)
+
+
+#usersearch
+def usersearch(request, pk):
+    users = User.objects.filter(body_text_search=pk)
+    return render(request, 'blog/userlist.html', { 'users': users })

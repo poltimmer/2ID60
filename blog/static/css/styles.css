@@ -654,9 +654,19 @@ footer {
   text-align: center;
 }
 
-
-
 .container10 {
   position: relative;
   width: 50%;
+}
+
+
+input {
+  float: none;
+  display: inline-block;
+  margin: auto;
+  border: none;
+  padding: 5px;
+  background: #45494e;
+  color: whitesmoke;
+
 }

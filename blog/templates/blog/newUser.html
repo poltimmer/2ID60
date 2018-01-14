@@ -26,8 +26,13 @@
     <div class="row">
         <div class="avatarandname">
             <div id="profileflex">
-                <div class="avatardiv">
-                    <img class="profileavatar" src="/static/media/{{ user.profile.profilepicture }}" alt="Profile Picture">
+                <div class="avatardiv container10">
+                  <img class="profileavatar image10" src="/static/media/{{ user.profile.profilepicture }}" alt="Profile Picture">
+                  <a href="{% url 'simple_upload' %}">
+                    <div class="overlay">
+                      <div class="text10">Edit Picture</div>
+                    </div>
+                  </a>
                 </div>
 
                 <div class="namediv">
@@ -43,8 +48,8 @@
     <a href="{% url 'post_new' %}">  <img class="uploadbutton" style="width: 150px; height: 150px;" src="{% static 'img/uploadSymbol.png' %}" alt="Upload"></a>
 </div>
 <!-- START OF CARD GROUPS ROW1-->
-<div id="fh5co-main">
-    <div class="container-fluid">
+<div id="fh5co-main" class="">
+    <div class="container profilegallery">
 
         <div class="row">
 

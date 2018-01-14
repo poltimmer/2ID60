@@ -11,6 +11,9 @@ from .forms import PostForm
 from django.contrib.auth.decorators import login_required
 
 
+from django.contrib import messages
+
+
 
 def index(request):
     """
@@ -116,6 +119,14 @@ def post_edit(request, pk):
         form = PostForm(instance=post)
     return render(request, 'blog/post_edit.html', {'form': form})
 
+def post_delete(request, pk):
+    post = get_object_or_404(Post, pk=pk)
+    post.delete()
+    #messages.success(request, "Successfully Deleted")
+    return redirect('newUser')
+
+
+
 def userlist(request):
     users = User.objects.all()
     return render(request, 'blog/userlist.html', { 'users': users })
@@ -127,6 +138,7 @@ def userprofile(request, pk):
         return 404
     posts = Post.objects.filter(author=user.pk)
     return render(request, 'blog/userprofile.html', { 'posts': posts, 'user': user, 'username': user.username})
+
 
 @login_required
 def friend_add(request):

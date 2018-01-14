@@ -23,6 +23,8 @@ urlpatterns = [
     url(r'^userlist/$', views.userlist, name='userlist'),
     url(r'^user/(?P<pk>[a-zA-Z0-9]+)/$', views.userprofile, name='userprofile'),
     url(r'^user/add/$', views.friend_add, name='friend_add'),
+    url(r'^post/delete/(?P<pk>\d+)$', views.post_delete, name='post_delete'),
+
 ]
 
 if settings.DEBUG:

@@ -670,3 +670,27 @@ input {
   color: whitesmoke;
 
 }
+
+column {
+  width: 33.3% !important;
+}
+
+@media (max-width: 850px) {
+  .column {
+    width: 50% !important;
+  }
+}
+
+
+
+@media (max-width: 1199px) {
+  .column {
+    width: 50% !important;
+  }
+}
+
+@media (max-width: 770px) {
+  .column {
+    width: 100% !important;
+  }
+}

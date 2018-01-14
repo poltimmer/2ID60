@@ -9,14 +9,6 @@
     width: 100%
 }
 
-.side-active {
-    margin-right: 120px;
-}
-
-footer.side-active {
-    padding-right: 120px !important;
-}
-
 hr {
     margin: 0;
 }

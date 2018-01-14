@@ -64,9 +64,10 @@
                       <h5 class="phototitle">{{post.title}}</h5>
 
                       <p class="photoprice">€{{post.price}}</p>
+                      <hr>
                       <p class="photodesc">{{post.text}}</p>
                       <div class="text-center">
-                          <a href="{% url 'post_delete' pk=post.pk %}">
+                          <a class="deletepost" href="{% url 'post_delete' pk=post.pk %}">
                             <img type="button" class="btn btn-danger" style="width: 70px;" src="{% static 'img/bin.ico' %}">
                           </a>
                       </div>

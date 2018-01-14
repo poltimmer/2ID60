@@ -60,3 +60,18 @@ def create_user_profile(sender, instance, created, **kwargs):
 @receiver(post_save, sender=User)
 def save_user_profile(sender, instance, **kwargs):
     instance.profile.save()
+
+class Friendship(models.Model):
+  from_friend = models.ForeignKey(
+    User, related_name='friend_set'
+  )
+  to_friend = models.ForeignKey(
+    User, related_name='to_friend_set'
+  )
+  def __unicode__(self):
+    return u'%s, %s' % (
+      self.from_friend.username,
+      self.to_friend.username
+    )
+  class Meta:
+    unique_together = (('to_friend', 'from_friend'), )

@@ -61,17 +61,23 @@ def create_user_profile(sender, instance, created, **kwargs):
 def save_user_profile(sender, instance, **kwargs):
     instance.profile.save()
 
-class Friendship(models.Model):
-  from_friend = models.ForeignKey(
-    User, related_name='friend_set'
+
+
+
+# follow system
+'''
+class Followage(models.Model):
+  from_user = models.ForeignKey(
+    User, related_name='follower'
   )
-  to_friend = models.ForeignKey(
-    User, related_name='to_friend_set'
+  to_user = models.ForeignKey(
+    User, related_name='to_be_followed'
   )
   def __unicode__(self):
     return u'%s, %s' % (
-      self.from_friend.username,
-      self.to_friend.username
+      self.from_user.username,
+      self.to_user.username
     )
   class Meta:
-    unique_together = (('to_friend', 'from_friend'), )
+    unique_together = (('to_user', 'from_user'), )
+'''

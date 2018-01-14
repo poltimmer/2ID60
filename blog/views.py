@@ -10,6 +10,7 @@ from django.contrib.auth.models import User
 from .forms import PostForm
 from django.contrib.auth.decorators import login_required
 from friendship.models import Friend, Follow, FollowingManager
+from django.contrib import messages
 
 
 
@@ -116,6 +117,14 @@ def post_edit(request, pk):
     else:
         form = PostForm(instance=post)
     return render(request, 'blog/post_edit.html', {'form': form})
+
+def post_delete(request, pk):
+    post = get_object_or_404(Post, pk=pk)
+    post.delete()
+    #messages.success(request, "Successfully Deleted")
+    return redirect('newUser')
+
+
 
 def userlist(request):
     users = User.objects.all()

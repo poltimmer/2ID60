@@ -18,7 +18,7 @@ footer.side-active {
 }
 
 hr {
-  margin: 0;
+    margin: 0;
 }
 
 .btn-toolbar .btn {
@@ -486,7 +486,21 @@ footer {
     .fa {
         font-size: 25px!important;
     }
+
+    #sidebar {
+        display: none;
+    }
+
+    .side-active {
+        margin-right: 0px!important;
+    }
+
+
+
+
+
 }
+
 
 .post-card {
     margin: 10px auto;
@@ -513,13 +527,66 @@ footer {
 
 .mobiledropdown {
     display: none;
+}
 
-    @media (max-width: 950px) {
-        .fa-user-circle-o {
-            font-size: 25px!important;
-        }
+@media (max-width: 950px) {
+    .fa-user-circle-o {
+        font-size: 25px!important;
     }
+}
 
 .photodesc {
-  font-weight: 100 !important;
+    font-weight: 100 !important;
+}
+
+.uploadbutton {}
+
+.profileavatar {
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.profilename {
+    position: relative;
+    font-size: 30px!important;
+    font-weight: 500;
+    padding-left: 10px;
+    text-transform:uppercase;
+    margin: 0px!important;
+
+
+
+
+}
+
+.avatarandname {
+    margin: auto;
+}
+
+.profilegallery {
+    background-color: grey;
+}
+
+
+#profileflex {
+    display: flex;
+    align-content: space-around;
+    align-items: center;
+    padding: auto;
+    flex-wrap: wrap;
+}
+
+#ppcontainer {
+    align-self: flex-start;
+}
+
+@media (max-width: 411px) {
+    .avatardiv {
+        margin: auto;
+    }
+    .namediv {
+        margin: auto;
+    }
 }

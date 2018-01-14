@@ -563,14 +563,26 @@ footer {
 
 }
 
-.deletepost {
+.deletedownloadpost {
   position: relative;
-  bottom: 10px;
+
 }
 
 .image10 {
   width: 200px!important;
   height: 200px!important;
+}
+
+.downloadimg {
+  color: black !important;
+  float: left;
+  padding: 0px;
+}
+
+.deleteimg {
+  color: black !important;
+  float: left;
+  padding: 0px;
 }
 
 
@@ -702,7 +714,7 @@ input {
 
 }
 
-column {
+.column {
   width: 33.3% !important;
 }
 

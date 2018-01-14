@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'blog',
     'api',
     'friendship',
+    'multiselectfield',
 ]
 
 REST_FRAMEWORK = {

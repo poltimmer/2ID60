@@ -6,6 +6,7 @@ from django.dispatch import receiver
 from django import forms
 import os
 from uuid import uuid4
+from multiselectfield import MultiSelectField
 
 def wrapper():
     return
@@ -21,6 +22,7 @@ def path_and_rename(path):
         # return the whole path to the file
         return os.path.join(path, filename)
     return wrapper
+
 class Post(models.Model):
     id = models.AutoField(primary_key=True)
     author = models.ForeignKey(User, null=True, blank=True) #formerly 'author'
@@ -38,6 +40,20 @@ class Post(models.Model):
     downloads = 0 # for postType photo
     price = models.PositiveIntegerField() #for photo
 
+    TAG_CHOICES = (
+        ('Portrait', 'Portrait'),
+        ('Landscape', 'Landscape'),
+        ('Black & White', 'Black & White'),
+        ('Fashion','Fashion'),
+        ('Film','Film'),
+        ('Food','Food'),
+        ('Music','Music'),
+        ('Sports','Sports'),
+        ('Travel','Travel'),
+    )
+    tag = MultiSelectField(choices = TAG_CHOICES, blank=True, null=True)
+
+
 
     def publish(self):
         self.published_date = timezone.now()
@@ -51,6 +67,7 @@ class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     profilepicture = models.ImageField(upload_to = 'img/', default = 'img/emptyPP.png')
     following = []
+
 
 @receiver(post_save, sender=User)
 def create_user_profile(sender, instance, created, **kwargs):

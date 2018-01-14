@@ -11,6 +11,7 @@ from .forms import PostForm
 from django.contrib.auth.decorators import login_required
 from friendship.models import Friend, Follow, FollowingManager
 from django.contrib import messages
+from django.db.models import Q
 
 
 
@@ -156,5 +157,5 @@ def unfollow(request, pk):
 
 #usersearch
 def usersearch(request, pk):
-    users = User.objects.filter(body_text_search=pk)
+    users = User.objects.filter(Q(username__contains=pk) | Q(first_name__contains=pk) | Q(last_name__contains=pk))
     return render(request, 'blog/userlist.html', { 'users': users })

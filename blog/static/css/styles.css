@@ -2,7 +2,6 @@
     background-color: lightblue;
     padding: 0 0 0 0;
     font-weight: 200;
-
 }
 
 .contentbox {
@@ -356,6 +355,7 @@ footer {
     display: flex;
     align-items: stretch;
     min-height: calc(100vh - 150px);
+    margin-top: 66px;
 }
 
 #sidebar {
@@ -693,4 +693,12 @@ column {
   .column {
     width: 100% !important;
   }
+}
+
+.userlist {
+  list-style: none;
+}
+
+.userlist li {
+  background: whitesmoke;
 }

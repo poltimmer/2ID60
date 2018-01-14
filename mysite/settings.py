@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'blog',
     'api',
-
+    'friendship',
 ]
 
 REST_FRAMEWORK = {

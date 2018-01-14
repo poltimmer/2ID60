@@ -549,20 +549,42 @@ footer {
     width: 220px;
     height: 220px;
     object-fit: cover;
+    margin: auto;
 }
 
 .profilename {
     position: relative;
     font-size: 30px!important;
     font-weight: 500;
-    padding-left: 10px;
+    padding-left: 15px!important;
     text-transform:uppercase;
-    margin: 0px!important;
-
-
-
+    margin: auto;
+    right: 3px;
 
 }
+
+.deletedownloadpost {
+  position: relative;
+
+}
+
+.image10 {
+  width: 200px!important;
+  height: 200px!important;
+}
+
+.downloadimg {
+  color: black !important;
+  float: left;
+  padding: 0px;
+}
+
+.deleteimg {
+  color: black !important;
+  float: left;
+  padding: 0px;
+}
+
 
 .avatarandname {
     margin: auto;
@@ -575,6 +597,15 @@ footer {
 
 }
 
+.container10 {
+  margin: auto;
+  width: 200px!important;
+}
+
+avatardiv {
+  margin: auto;
+}
+
 
 #profileflex {
     display: flex;
@@ -582,6 +613,7 @@ footer {
     align-items: center;
     padding: auto;
     flex-wrap: wrap;
+    margin: auto;
 }
 
 #ppcontainer {
@@ -595,6 +627,14 @@ footer {
     .namediv {
         margin: auto;
     }
+}
+
+.avatardiv {
+    margin: auto!important;
+}
+
+.namediv {
+  margin: auto!important;
 }
 
 .photoprice {
@@ -631,12 +671,13 @@ footer {
   bottom: 0;
   left: 0;
   right: 0;
-  height: 220px;
-  width: 220px;
+  height: 200px;
+  width: 200px;
   opacity: 0;
   transition: .5s ease;
   background-color: #008CBA;
   border-radius: 50%;
+
 }
 
 .container10:hover .overlay {
@@ -658,6 +699,8 @@ footer {
 .container10 {
   position: relative;
   width: 50%;
+  margin: auto;
+
 }
 
 input {
@@ -671,7 +714,7 @@ input {
 
 }
 
-column {
+.column {
   width: 33.3% !important;
 }
 

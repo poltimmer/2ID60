@@ -14,7 +14,7 @@
 <!-- Modernizr JS -->
 <script src="{% static 'js/modernizr-2.6.2.min.js' %}"></script>
 
-<title>PhotoLand: Explore Gallery</title>
+<title>PhotoLand: My Profile</title>
 
 {% endblock %}
 
@@ -30,7 +30,7 @@
                   <img class="profileavatar image10" src="/static/media/{{ user.profile.profilepicture }}" alt="Profile Picture">
                   <a href="{% url 'simple_upload' %}">
                     <div class="overlay">
-                      <div class="text10">Edit Profile Picture</div>
+                      <div class="text10">Edit</div>
                     </div>
                   </a>
                 </div>
@@ -61,12 +61,15 @@
 
                     </div>
                     <div class="fh5co-desc">
-=======
                       <h5 class="phototitle">{{post.title}}</h5>
-                      <hr>
-                      <p class="photodesc">{{post.text}}</p>
+
                       <p class="photoprice">€{{post.price}}</p>
->>>>>>> 8728a9ed28dc1175a87f7230ab6c3dd028a4c126
+                      <p class="photodesc">{{post.text}}</p>
+                      <div class="text-center">
+                          <a href="{% url 'post_delete' pk=post.pk %}">
+                            <img type="button" class="btn btn-danger" style="width: 70px;" src="{% static 'img/bin.ico' %}">
+                          </a>
+                      </div>
                     </div>
 
                 </div>

@@ -545,18 +545,27 @@ footer {
 
 .profileavatar {
     border-radius: 50%;
-    width: 220px;
-    height: 220px;
+    width: 200px;
+    height: 200px;
     object-fit: cover;
+    margin: auto;
+}
+
+.image10 {
+  width: 200px!important;
+  height: 200px!important;
+
 }
 
 .profilename {
     position: relative;
     font-size: 30px!important;
     font-weight: 500;
-    padding-left: 10px;
+    padding-left: 0px;
     text-transform:uppercase;
-    margin: 0px!important;
+    margin: auto;
+    padding-left: 10px;
+    right: 6px;
 
 
 
@@ -574,6 +583,11 @@ footer {
 
 }
 
+.container10 {
+  margin: auto;
+  width: 200px!important;
+}
+
 
 #profileflex {
     display: flex;
@@ -581,20 +595,25 @@ footer {
     align-items: center;
     padding: auto;
     flex-wrap: wrap;
+    width:auto;
 }
 
 #ppcontainer {
     align-self: flex-start;
 }
 
-@media (max-width: 411px) {
-    .avatardiv {
-        margin: auto;
-    }
-    .namediv {
-        margin: auto;
-    }
+
+
+
+.namediv {
+  margin: auto!important;
 }
+
+.container10 {
+  width: 200px;
+  height: 200px;
+}
+
 
 .photoprice {
     margin: 0px!important;
@@ -630,12 +649,13 @@ footer {
   bottom: 0;
   left: 0;
   right: 0;
-  height: 220px;
-  width: 220px;
+  height: 200px;
+  width: 200px;
   opacity: 0;
   transition: .5s ease;
   background-color: #008CBA;
   border-radius: 50%;
+
 }
 
 .container10:hover .overlay {

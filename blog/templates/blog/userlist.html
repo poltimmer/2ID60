@@ -9,12 +9,15 @@
   <ul class="userlist">
   {% for user in users %}
     <li>
-      <a class="userlist-link" href="{% url 'userprofile' pk=user.username %}">
-        <div class="userlist-item">
-          <img class="search-avatar" src="/static/media/{{ user.profile.profilepicture }}">
-          <span>{{ user.username }}</span>
-        </div>
-      </a>
+      <div class="userlist-flex">
+        <a class="userlist-link" href="{% url 'userprofile' pk=user.username %}">
+          <div class="userlist-item">
+            <img class="search-avatar" src="/static/media/{{ user.profile.profilepicture }}">
+            <span>{{ user.username }}</span>
+          </div>
+        </a>
+        <a class="btn follow-btn" href="{% url 'follow' pk=user.username %}">Follow</a>
+      </div>
     </li>
   {% endfor %}
   {% if not users %}

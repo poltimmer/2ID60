@@ -620,7 +620,7 @@ footer {
 }
 
 .profilegallery {
-    background-color: whitesmoke!important;
+    background-color: whitesmoke !important;
     padding-top: 1px!important;
     border-radius: 3px;
 
@@ -769,6 +769,7 @@ input:focus {
 .userlist {
   list-style: none;
   padding: 0;
+  border-radius: 3px;
 }
 
 .userlist li {
@@ -788,13 +789,43 @@ input:focus {
   height: 100%;
 }
 
+.userlist-flex {
+  display: flex;
+  align-items: stretch;
+  align-content: space-between;
+}
+
 .userlist-link {
   text-decoration: none;
   color: black;
   transition: 0.2s;
+  flex-grow: 1;
 }
 
 .userlist-link:hover {
   text-decoration: none;
   color: gray;
+}
+
+.follow-btn {
+  background-color: transparent;
+  margin: 10px;
+  padding: 4px 15px;
+  border-radius: 10px;
+  border: 1px solid #36c746;
+  font-size: 16px;
+  color: black;
+  transition: 0.25s cubic-bezier(0.22, 0.61, 0.36, 1)
+}
+
+.follow-btn:hover {
+  background-color: #5fdeb3;
+  border-radius: 50px;
+  border-color: #5fdeb3;
+  color: gray;
+  text-decoration: none;
+}
+
+.userlist-item .follow-btn {
+  margin-left: auto;
 }

@@ -50,9 +50,9 @@
                 </div>
                 {% if request.user.is_authenticated and request.user != user %}
                 {% if not already_following %}
-                <a href="{% url 'follow' pk=user.username %}">Follow</a>
+                <a class="follow-btn" href="{% url 'follow' pk=user.username %}">Follow</a>
                 {% else %}
-                <a href="{% url 'unfollow' pk=user.username %}">Unfollow</a>
+                <a class="follow-btn" href="{% url 'unfollow' pk=user.username %}">Unfollow</a>
                 {% endif %}
                 {% endif %}
             </div>

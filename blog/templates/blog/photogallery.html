@@ -33,8 +33,10 @@
                       <h5 class="phototitle">{{post.title}}</h5>
                       <p class="photoprice">€{{post.price}}</p>
                     </div>
-
-                        <a href="/static/media/{{ post.img }}" download><i class="fa fa-download downloadimg" aria-hidden="true"></i></a>
+                      <a href="/static/media/{{ post.img }}" download>
+                        <i class="fa fa-download downloadimg" aria-hidden="true"></i>
+                      </a>
+                      <p class="photoauthor">By: <a href="{% url 'userprofile' pk=post.author %}">{{post.author}}</a></p>
                     </div>
                 </div>
                 {% endfor %}

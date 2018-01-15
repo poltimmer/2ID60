@@ -36,11 +36,13 @@
             <div id="profileflex">
                 <div class="avatardiv container10">
                   <img class="profileavatar image10" src="/static/media/{{ user.profile.profilepicture }}" alt="Profile Picture">
+                  {% if request.user == user %}
                   <a href="{% url 'simple_upload' %}">
                     <div class="overlay">
                       <div class="text10">Edit</div>
                     </div>
                   </a>
+                  {% endif %}
                 </div>
 
                 <div class="namediv" style = "margin-left: 60px">

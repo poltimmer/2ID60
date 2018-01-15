@@ -140,11 +140,13 @@ def userprofile(request, pk):
         return render(request, 'blog/userprofile.html', { 'posts': posts, 'user': user, 'username': user.username,})
 
 #follow and unfollow
+@login_required
 def follow(request, pk):
     followed = User.objects.get(username=pk)
     Follow.objects.add_follower(request.user, followed)
     return redirect('userprofile', pk=pk)
 
+@login_required
 def unfollow(request, pk):
     followed = User.objects.get(username=pk)
     Follow.objects.remove_follower(request.user, followed)

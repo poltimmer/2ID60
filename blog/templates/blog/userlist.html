@@ -16,9 +16,7 @@
             <span>{{ user.username }}</span>
           </div>
         </a>
-        {% if request.user.is_authenticated and request.user != user %}
         <a class="btn follow-btn" href="{% url 'follow' pk=user.username %}">Follow</a>
-        {% endif %}
       </div>
     </li>
   {% endfor %}

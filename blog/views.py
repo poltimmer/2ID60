@@ -11,7 +11,7 @@ from .forms import PostForm
 from django.contrib.auth.decorators import login_required
 from friendship.models import Friend, Follow, FollowingManager
 from django.contrib import messages
-from django.db.models import Q
+from django.db.models import Q, Count
 
 
 
@@ -163,7 +163,7 @@ def usersearch(request, pk):
 #homefeed
 @login_required
 def homefeed(request):
-    users = User.objects.order_by('-followers')[:10]
+    users = User.objects.annotate(follower_count=Count('followers')).order_by('-follower_count')[:5]
     following = Follow.objects.following(request.user)
     posts = Post.objects.filter(author__in=following).order_by('-published_date')
     return render(request, 'blog/feed.html', {'posts': posts, 'following': following, 'users': users})

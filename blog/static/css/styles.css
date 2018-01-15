@@ -580,6 +580,7 @@ footer {
   padding: 0px;
   position: relative;
   bottom:1px;
+  margin-right: 5px;
 }
 
 
@@ -643,7 +644,9 @@ avatardiv {
     color: #d12c2a!important;
     display: inline-block!important;
     float:right;
-    margin: 0px!important;
+    margin-right: 5px!important;
+    margin-top: 0px!important;
+
 
 
 }
@@ -653,16 +656,26 @@ avatardiv {
     line-height: 17px!important;
     font-weight: 450!important;
     display: inline-block!important;
+    margin-left: 5px!important;
 }
 
 .fh5co-desc {
-    padding: 8px!important;
+    padding: 0px!important;
     width: 100%;
     height:auto;
     padding-bottom: 0px!important;
     padding-top: 0px!important;
 
+
 }
+
+.titleandprice {
+    width: 100%;
+    display: inline-block;
+
+
+}
+
 
 .overlay {
   position: absolute;

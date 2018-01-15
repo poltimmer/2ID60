@@ -26,17 +26,24 @@
                     <div class="animate-box">
                         <a href="/static/media/{{ post.img }}" class="image-popup fh5co-board-img" title="{{post.title}}"><img src="/static/media/{{ post.img }}" alt="Free HTML5 Bootstrap template"></a>
                     </div>
-										<div class="fh5co-desc">
-											<h5 class="phototitle">{{post.title}}</h5>
-                      <p class="photoprice">{{post.price}}€</p>
-											<hr>
+                    <div class="fh5co-desc">
+                      <div class="titleandprice">
+                      <h5 class="phototitle">{{post.title}}</h5>
+
+                      <p class="photoprice">€{{post.price}}</p>
+
+                    </div>
 
 
-                      <p class="photodesc">{{post.text}}</p>
-                      <p>Tags: {{post.tag}}</p>
-                      <p> ID: {{ post.id }} </p>
-                      <p><a href="/static/media/{{ post.img }}" download> Download</a></p>
-										</div>
+                    <a class="deletedownloadpost" href="{% url 'post_delete' pk=post.pk %}">
+                      <i class="fa fa-trash-o deleteimg" aria-hidden="true"></i>
+                    </a>
+
+
+
+                        <a href="/static/media/{{ post.img }}" download><i class="fa fa-download downloadimg" aria-hidden="true"></i></a>
+
+                    </div>
 
                 </div>
                 {% endfor %}

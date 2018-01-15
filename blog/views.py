@@ -136,7 +136,8 @@ def userprofile(request, pk):
 @login_required
 def follow(request, pk):
     followed = User.objects.get(username=pk)
-    Follow.objects.add_follower(request.user, followed)
+    if not FollowingManager.follows(request.user, request.user, followed):
+        Follow.objects.add_follower(request.user, followed)
     return redirect('userprofile', pk=pk)
 
 @login_required

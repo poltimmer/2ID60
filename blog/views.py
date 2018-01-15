@@ -160,5 +160,5 @@ def usersearch(request, pk):
 @login_required
 def homefeed(request):
     following = Follow.objects.following(request.user)
-    posts = Post.objects.filter(author__in=following)
+    posts = Post.objects.filter(author__in=following).order_by('-id')
     return render(request, 'blog/feed.html', {'posts': posts})

@@ -651,6 +651,13 @@ avatardiv {
 
 }
 
+.lookslike {
+  margin-right:auto!important;
+  margin-left:auto!important;
+  margin-bottom: 7px!important;
+  text-align: center;
+}
+
 .phototitle {
     margin: 0px!important;
     line-height: 17px!important;

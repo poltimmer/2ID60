@@ -33,12 +33,18 @@
                 </a>
             </div>
             <div class="fh5co-desc">
+              <div class="titleandprice">
               <h5 class="phototitle">{{post.title}}</h5>
               <p class="photoprice">€{{post.price}}</p>
-              <p>Tags: {{post.tag}}</p>
-              <p> ID: {{ post.id }} </p>
-              <p><a href="/static/media/{{ post.img }}" download> Download</a></p>
-              <p>{{ post.downloads }}</p>
+            </div>
+              {% if request.user == user %}
+              <a class="deletedownloadpost" href="{% url 'post_delete' pk=post.pk %}">
+                <i class="fa fa-trash-o deleteimg" aria-hidden="true"></i>
+              </a>
+              {% endif %}
+              <a href="/static/media/{{ post.img }}" download>
+                <i class="fa fa-download downloadimg" aria-hidden="true"></i>
+              </a>
             </div>
           </div>
         {% endfor %}
@@ -48,7 +54,7 @@
 </div>
 {% else %}
 <div class="container">
-  <h3>Looks like you're not following anybody. Let's change that!</h3>
+  <h3 class="lookslike">Looks like you're not following anybody. Let's change that!</h3>
   <ul class="userlist">
   {% for user in users %}
     <li>

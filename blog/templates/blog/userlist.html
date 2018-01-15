@@ -12,6 +12,9 @@
       <a href="{% url 'userprofile' pk=u.username %}">{{ u.username }}</a>
     </li>
   {% endfor %}
+  {% if not users %}
+  <h3>Sorry, that didn't bring up any results.</h3>
+  {% endif %}
   </ul>
 </div>
 {% endblock %}

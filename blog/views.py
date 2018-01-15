@@ -155,3 +155,10 @@ def unfollow(request, pk):
 def usersearch(request, pk):
     users = User.objects.filter(Q(username__contains=pk) | Q(first_name__contains=pk) | Q(last_name__contains=pk))
     return render(request, 'blog/userlist.html', { 'users': users })
+
+#homefeed
+@login_required
+def homefeed(request):
+    following = Follow.objects.following(request.user)
+    posts = Post.objects.filter(author__in=following)
+    return render(request, 'blog/feed.html', {'posts': posts})

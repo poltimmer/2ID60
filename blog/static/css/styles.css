@@ -641,7 +641,7 @@ avatardiv {
     margin-top: 6px!important;
     font-weight: 450!important;
     color: #d12c2a!important;
-    display: inline-block;
+    display: inline-block!important;
     float:right;
     margin: 0px!important;
 
@@ -652,7 +652,7 @@ avatardiv {
     margin: 0px!important;
     line-height: 17px!important;
     font-weight: 450!important;
-    display: inline-block;
+    display: inline-block!important;
 }
 
 .fh5co-desc {

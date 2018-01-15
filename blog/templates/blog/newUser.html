@@ -65,16 +65,17 @@
                         </a>
                     </div>
                     <div class="fh5co-desc">
-                      <h5 class="phototitle">{{post.title}}</h5>
-                      <p class="photoprice">€{{post.price}}</p>
+                      <span><h5 class="phototitle">{{post.title}}</h5></span>
+                    <span><p class="photoprice">€{{post.price}}</p></span>
 
 
-                      <div class="text-center">
-                          <a class="deletedownloadpost" href="{% url 'post_delete' pk=post.pk %}">
+
+                          <span><a class="deletedownloadpost" href="{% url 'post_delete' pk=post.pk %}">
                             <i class="fa fa-trash-o deleteimg" aria-hidden="true"></i>
-                          </a>
+                          </a></span>
+
                           <a href="/static/media/{{ post.img }}" download><i class="fa fa-download downloadimg" aria-hidden="true"></i></a>
-                      </div>
+
                     </div>
                   </div>
                 {% endfor %}

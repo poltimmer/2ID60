@@ -37,11 +37,6 @@
               <h5 class="phototitle">{{post.title}}</h5>
               <p class="photoprice">€{{post.price}}</p>
             </div>
-              {% if request.user == user %}
-              <a class="deletedownloadpost" href="{% url 'post_delete' pk=post.pk %}">
-                <i class="fa fa-trash-o deleteimg" aria-hidden="true"></i>
-              </a>
-              {% endif %}
               <a href="/static/media/{{ post.img }}" download>
                 <i class="fa fa-download downloadimg" aria-hidden="true"></i>
               </a>

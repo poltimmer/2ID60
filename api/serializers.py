@@ -7,6 +7,6 @@ class PostSerializer(serializers.ModelSerializer):
     class Meta:
         """Meta class to map serializer's fields with the model fields."""
         model = Post
-        fields = ('id', 'title','author', 'created_date', 'published_date', 'downloads', 'img', 'price', 'tag')
-        read_only_fields = ('id', 'title','author', 'created_date', 'published_date', 'downloads', 'img', 'price', 'tag')
+        fields = ('id', 'title','author', 'created_date', 'img', 'price', 'tag')
+        read_only_fields = ('id', 'title','author', 'created_date', 'img', 'price', 'tag')
 # Views

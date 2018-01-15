@@ -829,3 +829,18 @@ input:focus {
 .userlist-item .follow-btn {
   margin-left: auto;
 }
+
+#id_tag {
+  list-style: none;
+  padding-left: 0;
+}
+
+#id_tag li label {
+  display: flex;
+  justify-content: center;
+}
+
+#id_tag li label input {
+  margin: auto 10px;
+  width: 13px;
+}

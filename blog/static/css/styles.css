@@ -739,7 +739,7 @@ input:focus {
 
 .userlist {
   list-style: none;
-  margin:auto!important;
+  padding: 0;
 }
 
 .userlist li {

@@ -61,6 +61,7 @@
             <div class="post-body">
                   <h6 class="post-text">{{ post.title }}:&nbsp{{ post.price }}&nbsp€</h6>
                   <p> ID: {{ post.id }} </p>
+                  <p><a href="/static/media/{{ post.img }}" download> Download</a></p>
             </div>
           </div>
           {% endfor %}

@@ -163,6 +163,7 @@ def usersearch(request, pk):
 #homefeed
 @login_required
 def homefeed(request):
+    #query with 10 most followed users
     users = User.objects.annotate(follower_count=Count('followers')).order_by('-follower_count')[:10]
     following = Follow.objects.following(request.user)
     posts = Post.objects.filter(author__in=following).order_by('-published_date')

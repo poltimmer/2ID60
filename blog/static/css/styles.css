@@ -569,7 +569,7 @@ footer {
 .downloadimg {
   color: black !important;
   float: right!important;
-  margin-left:  5px;
+  margin: 0 5px;
   display: inline;
   padding: 0px!important;
 }

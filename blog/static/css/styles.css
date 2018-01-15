@@ -732,6 +732,7 @@ input:focus {
 
 .userlist {
   list-style: none;
+  padding: 0;
 }
 
 .userlist li {

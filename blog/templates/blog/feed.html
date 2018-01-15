@@ -39,6 +39,8 @@
               <p>{{ post.downloads }}</p>
             </div>
           </div>
+          {% empty %}
+          <p>Go ahead, follow someone!</p>
         {% endfor %}
       </div>
     </div>

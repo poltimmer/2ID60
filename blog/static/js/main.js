@@ -71,7 +71,7 @@
 
   $('input[name="usersearch"]').on('keydown', () => {
     if (event.keyCode === 13) {
-      var search = $('input[name="usersearch"]').val();
+      var search = $('input[name="usersearch"]').val().replace(/ /g, '_');;
       window.location.href = "/search/u/" + search; + "/"
     }
   });

@@ -568,15 +568,21 @@ footer {
 
 .downloadimg {
   color: black !important;
-  float: left;
-  padding: 0px;
+  float: right!important;
+  margin-left:  5px;
+  display: inline;
+  padding: 0px!important;
 }
 
 .deleteimg {
   color: black !important;
-  float: left;
+  float: right;
   padding: 0px;
+  position: relative;
+  bottom:1px;
 }
+
+
 
 
 .avatarandname {

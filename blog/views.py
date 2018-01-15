@@ -159,7 +159,7 @@ def usersearch(request, pk):
             whitespace = True
     if whitespace == True:
         first, last = pk.split(" ")
-        users = User.objects.filter(Q(first_name_contains=first) | Q(last_name__contains=last))
+        users = User.objects.filter(Q(username__contains=last) | Q(username__contains=first) | Q(first_name_contains=first) | Q(last_name__contains=last))
     else:
         users = User.objects.filter(Q(username__contains=pk) | Q(first_name__contains=pk) | Q(last_name__contains=pk))
     return render(request, 'blog/userlist.html', { 'users': users })

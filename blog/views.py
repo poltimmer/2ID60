@@ -22,17 +22,12 @@ def index(request):
     """
     return render(request, 'blog/index.html')
 
-def examples(request):
-    return render(request, 'blog/examples.html', {})
-
 @login_required
-def newUser(request):
+def myprofile(request):
     posts = Post.objects.filter(author=request.user)
     user = request.user
     return render(request, 'blog/userprofile.html', {'posts':posts})
 
-def discover(request):
-    return render(request, 'blog/discover.html', {})
 
 def photogallery(request):
     posts = Post.objects.all()

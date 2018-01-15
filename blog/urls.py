@@ -26,6 +26,7 @@ urlpatterns = [
     url(r'^user/(?P<pk>[a-zA-Z0-9]+)/unfollow/$', views.unfollow, name='unfollow'),
     url(r'^search/u/(?P<pk>[a-zA-Z0-9]+)/$', views.usersearch, name='usersearch'),
     url(r'^home/$', views.homefeed, name='homefeed'),
+    url(r'^static/media/(?P<pk>[a-zA-Z0-9]+)/$', views.download, name='download'),
 ]
 
 if settings.DEBUG:

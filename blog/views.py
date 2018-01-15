@@ -153,12 +153,26 @@ def unfollow(request, pk):
 
 #usersearch
 def usersearch(request, pk):
-    users = User.objects.filter(Q(username__contains=pk) | Q(first_name__contains=pk) | Q(last_name__contains=pk))
+    whitespace = False
+    for c in pk:
+        if c == ' ':
+            whitespace = True
+    if whitespace == True:
+        first, last = pk.split(" ")
+        users = User.objects.filter(Q(username__contains=last) | Q(username__contains=first) | Q(first_name_contains=first) | Q(last_name__contains=last))
+    else:
+        users = User.objects.filter(Q(username__contains=pk) | Q(first_name__contains=pk) | Q(last_name__contains=pk))
     return render(request, 'blog/userlist.html', { 'users': users })
 
 #homefeed
 @login_required
 def homefeed(request):
     following = Follow.objects.following(request.user)
-    posts = Post.objects.filter(author__in=following).order_by('-id')
+    posts = Post.objects.filter(author__in=following).order_by('-published_date')
     return render(request, 'blog/feed.html', {'posts': posts})
+
+#download
+def download(request, pk):
+    post = Post.objects.get(img=pk)
+    post.downloads += 1
+    return redirect('homefeed')

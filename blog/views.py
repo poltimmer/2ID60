@@ -29,7 +29,7 @@ def examples(request):
 def newUser(request):
     posts = Post.objects.filter(author=request.user)
     user = request.user
-    return render(request, 'blog/newUser.html', {'posts':posts})
+    return render(request, 'blog/userprofile.html', {'posts':posts})
 
 def discover(request):
     return render(request, 'blog/discover.html', {})

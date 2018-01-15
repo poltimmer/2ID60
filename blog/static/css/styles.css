@@ -9,14 +9,6 @@
     width: 100%
 }
 
-.side-active {
-    margin-right: 120px;
-}
-
-footer.side-active {
-    padding-right: 120px !important;
-}
-
 hr {
     margin: 0;
 }
@@ -403,6 +395,7 @@ footer {
     top: 0px;
     transition: 100ms;
     padding: 3px!important;
+    cursor: pointer;
 }
 
 .Adropdown {
@@ -711,31 +704,8 @@ input {
   padding: 5px;
   background: #45494e;
   color: whitesmoke;
+  border-radius: 3px;
 
-}
-
-.column {
-  width: 33.3% !important;
-}
-
-@media (max-width: 850px) {
-  .column {
-    width: 50% !important;
-  }
-}
-
-
-
-@media (max-width: 1199px) {
-  .column {
-    width: 50% !important;
-  }
-}
-
-@media (max-width: 770px) {
-  .column {
-    width: 100% !important;
-  }
 }
 
 .userlist {

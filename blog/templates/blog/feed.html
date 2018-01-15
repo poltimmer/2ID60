@@ -3,6 +3,19 @@
 {% load staticfiles %}
 
 {% block head %}
+<!-- Animate.css -->
+<link rel="stylesheet" href="{% static 'css/animate.css' %}">
+<!-- Icomoon Icon Fonts-->
+<link rel="stylesheet" href="{% static 'css/icomoon.css' %}">
+<!-- Magnific Popup -->
+<link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+<!-- Salvattore -->
+<link rel="stylesheet" href="{% static 'css/salvattore.css' %}">
+<!-- Theme Style -->
+<link rel="stylesheet" href="{% static 'css/gallerystyle.css' %}">
+<!-- Modernizr JS -->
+<script src="{% static 'js/modernizr-2.6.2.min.js' %}"></script>
+
 <title>PhotoLand: Feed</title>
 {% endblock %}
 
@@ -11,30 +24,18 @@
   <div class="container-fluid">
     <div class="row">
       <div id="fh5co-board" data-columns>
-        {% for x in posts %}
-        {% if postType %}
+        {% for post in posts %}
         <div class="item">
-          <div class="animate-box">
-            <a href="images/img_1.jpg" class="image-popup fh5co-board-img" title="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, eos?"><img src="{% static 'img/Photos/img_1.jpg' %}" alt="Free HTML5 Bootstrap template"></a>
-          </div>
-          <div class="fh5co-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, eos?</div>
-        </div>
-        {% else %}
-        <div class="job">
-         <div class="row">
-          <div class="col-md-4">
-            <a href="#">
-              <img class="img-fluid rounded mb-3 mb-md-0" src="http://placehold.it/350x200" alt="">
-            </a>
-          </div>
-            <div class="col-md-5 jobtext">
-              <h3>Project One</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita laborum at voluptate. Labore, voluptates totam at aut nemo deserunt rem magni pariatur quos perspiciatis atque eveniet unde.</p>
-              <a class="btn btn-primary" href="#">Reply</a>
+            <div class="animate-box">
+                <a href="/static/media/{{ post.img }}" class="image-popup fh5co-board-img" title="{{post.title}}">
+                  <img src="/static/media/{{ post.img }}" alt="Free HTML5 Bootstrap template">
+                </a>
+            </div>
+            <div class="fh5co-desc">
+              <h5 class="phototitle">{{post.title}}</h5>
+              <p class="photoprice">€{{post.price}}</p>
             </div>
           </div>
-        </div>
-        {% endif %}
         {% endfor %}
       </div>
     </div>

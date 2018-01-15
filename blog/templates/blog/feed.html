@@ -20,12 +20,13 @@
 {% endblock %}
 
 {% block content %}
+{% if following %}
 <div id="fh5co-main">
   <div class="container-fluid">
     <div class="row">
       <div id="fh5co-board" data-columns>
         {% for post in posts %}
-        <div class="item">
+          <div class="item">
             <div class="animate-box">
                 <a href="/static/media/{{ post.img }}" class="image-popup fh5co-board-img" title="{{post.id}}">
                   <img src="/static/media/{{ post.img }}" alt="Free HTML5 Bootstrap template">
@@ -40,13 +41,28 @@
               <p>{{ post.downloads }}</p>
             </div>
           </div>
-          {% empty %}
-          <p>Go ahead, follow someone!</p>
         {% endfor %}
       </div>
     </div>
   </div>
 </div>
+{% else %}
+<div class="container">
+  <h3>Looks like you're not following anybody. Let's change that!</h3>
+  <ul class="userlist">
+  {% for user in users %}
+    <li>
+      <a class="userlist-link" href="{% url 'userprofile' pk=user.username %}">
+        <div class="userlist-item">
+          <img class="search-avatar" src="/static/media/{{ user.profile.profilepicture }}">
+          <span>{{ user.username }}</span>
+        </div>
+      </a>
+    </li>
+  {% endfor %}
+  </ul>
+</div>
+{% endif %}
 {% endblock %}
 
 {% block script %}

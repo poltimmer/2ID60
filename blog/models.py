@@ -65,7 +65,6 @@ class Post(models.Model):
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     profilepicture = models.ImageField(upload_to = 'img/', default = 'img/emptyPP.png')
-    following = []
 
 
 @receiver(post_save, sender=User)

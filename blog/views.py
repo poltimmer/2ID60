@@ -167,9 +167,10 @@ def usersearch(request, pk):
 #homefeed
 @login_required
 def homefeed(request):
+    users = User.objects.order_by('-followers')[:10]
     following = Follow.objects.following(request.user)
     posts = Post.objects.filter(author__in=following).order_by('-published_date')
-    return render(request, 'blog/feed.html', {'posts': posts})
+    return render(request, 'blog/feed.html', {'posts': posts, 'following': following, 'users': users})
 
 #download
 def download(request, pk):

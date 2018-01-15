@@ -9,10 +9,10 @@
   <ul class="userlist">
   {% for user in users %}
     <li>
-
       <a class="userlist-link" href="{% url 'userprofile' pk=user.username %}">
         <div class="userlist-item">
-          <img class="search-avatar" src="/static/media/{{ user.profile.profilepicture }}">{{ user.username }}
+          <img class="search-avatar" src="/static/media/{{ user.profile.profilepicture }}">
+          <span>{{ user.username }}</span>
         </div>
       </a>
     </li>

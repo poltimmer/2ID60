@@ -46,9 +46,11 @@ class Post(models.Model):
         ('Black & White', 'Black & White'),
         ('Fashion','Fashion'),
         ('Film','Film'),
+        ('Nature', 'Nature'),
         ('Food','Food'),
         ('Music','Music'),
         ('Sports','Sports'),
+        ('Automotive', 'Automotive'),
         ('Travel','Travel'),
     )
     tag = MultiSelectField(choices = TAG_CHOICES, blank=True, null=True)

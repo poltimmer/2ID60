@@ -844,3 +844,7 @@ input:focus {
   margin: auto 10px;
   width: 13px;
 }
+
+.form input {
+  color: black;
+}

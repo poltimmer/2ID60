@@ -7,9 +7,14 @@
 {% block content %}
 <div class="container">
   <ul class="userlist">
-  {% for u in users %}
+  {% for user in users %}
     <li>
-      <a href="{% url 'userprofile' pk=u.username %}">{{ u.username }}</a>
+
+      <a class="userlist-link" href="{% url 'userprofile' pk=user.username %}">
+        <div class="userlist-item">
+          <img class="search-avatar" src="/static/media/{{ user.profile.profilepicture }}">{{ user.username }}
+        </div>
+      </a>
     </li>
   {% endfor %}
   {% if not users %}

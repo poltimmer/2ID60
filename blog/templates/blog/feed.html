@@ -40,6 +40,7 @@
               <a href="/static/media/{{ post.img }}" download>
                 <i class="fa fa-download downloadimg" aria-hidden="true"></i>
               </a>
+              <p class="photoauthor">By: <a href="{% url 'userprofile' pk=post.author %}">{{post.author}}</a></p>
             </div>
           </div>
         {% endfor %}
@@ -57,7 +58,10 @@
       <a class="userlist-link" href="{% url 'userprofile' pk=user.username %}">
         <div class="userlist-item">
           <img class="search-avatar" src="/static/media/{{ user.profile.profilepicture }}">
-          <span>{{ user.username }}</span>
+          <span>
+            <p id="username">{{ user.username }}</p>
+            <p id="fullname">{{ user.first_name }} {{ user.last_name }}</p>
+          </span>
         </div>
       </a>
       <a class="btn follow-btn" href="{% url 'follow' pk=user.username %}">Follow</a>

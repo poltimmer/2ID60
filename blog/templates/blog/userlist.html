@@ -13,7 +13,10 @@
         <a class="userlist-link" href="{% url 'userprofile' pk=user.username %}">
           <div class="userlist-item">
             <img class="search-avatar" src="/static/media/{{ user.profile.profilepicture }}">
-            <span>{{ user.username }}</span>
+            <span>
+              <p id="username">{{ user.username }}</p>
+              <p id="fullname">{{ user.first_name }} {{ user.last_name }}</p>
+            </span>
           </div>
         </a>
         {% if request.user != user %}
